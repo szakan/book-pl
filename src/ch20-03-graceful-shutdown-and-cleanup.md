@@ -1,0 +1,1 @@
+# Łagodne zamykanie i czyszczenie

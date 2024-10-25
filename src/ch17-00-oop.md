@@ -1,0 +1,1 @@
+# Funkcje programowania obiektowego Rust

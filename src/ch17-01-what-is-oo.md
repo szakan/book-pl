@@ -1,0 +1,1 @@
+# Charakterystyka języków obiektowych

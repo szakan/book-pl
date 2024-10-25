@@ -1,0 +1,1 @@
+# Implementacja wzorca projektowego obiektowego
