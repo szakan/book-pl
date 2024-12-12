@@ -17,7 +17,7 @@ lub dać znać o nowym!
 - [한국어](https://github.com/rinthel/rust-lang-book-ko)
 - [日本語](https://github.com/rust-lang-ja/book-ja)
 - [Français](https://github.com/Jimskapt/rust-book-fr)
-- [Polski](https://github.com/paytchoo/book-pl)
+- [Polski](https://github.com/szakan/book-pl)
 - [Cebuano](https://github.com/agentzero1/book)
 - [Tagalog](https://github.com/josephace135/book)
 - [Esperanto](https://github.com/psychoslave/Rust-libro)

@@ -1,4 +1,4 @@
-## Futures, Tasks, and Threads
+## Przyszłości, zadania i wątki
 
 Jak widzieliśmy w poprzednim rozdziale, wątki zapewniają jedno podejście do współbieżności.
 W tym rozdziale widzieliśmy inne podejście do współbieżności, używając asynchroniczności z
@@ -64,7 +64,7 @@ ponieważ za każdym razem, gdy kończyliśmy przyszłość, jej stan był popra
 
 Te ograniczenia sprawiają również, że wątki są trudniejsze do komponowania niż przyszłości. Znacznie
 trudniej jest na przykład używać wątków do budowania pomocników, takich jak
-`timeout`, który zbudowaliśmy w [„Building Our Own Async Abstractions”][combining-futures]
+`timeout`, który zbudowaliśmy w [„Budowanie własnych abstrakcji asynchronicznych”][combining-futures]
 lub metoda `throttle`, której użyliśmy ze strumieniami w [„Composing Strumienie”][streams].
 Fakt, że przyszłości są bogatszymi strukturami danych, oznacza, że ​​można je komponować
 w sposób bardziej naturalny, jak widzieliśmy.

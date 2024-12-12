@@ -2,7 +2,7 @@
 
 System typów Rust ma pewne cechy, o których do tej pory wspomnieliśmy, ale których jeszcze nie omówiliśmy. Zaczniemy od omówienia nowych typów w ogólności, badając, dlaczego nowe typy są przydatne jako typy. Następnie przejdziemy do aliasów typów, cechy podobnej do nowych typów, ale o nieco innej semantyce. Omówimy również typ `!` i typy o dynamicznym rozmiarze.
 
-### Using the Newtype Pattern for Type Safety and Abstraction
+### Wykorzystanie wzorca Newtype w celu zapewnienia bezpieczeństwa typu i abstrakcji
 
 > Uwaga: Ta sekcja zakłada, że ​​przeczytałeś wcześniejszą sekcję [„Używanie
 > wzorca Newtype do implementacji cech zewnętrznych w
@@ -30,7 +30,7 @@ ukrywa szczegóły
 implementacji”][encapsulation-that-hides-implementation-details]<!-- ignore -->
 rozdziału 18.
 
-### Creating Type Synonyms with Type Aliases
+### Tworzenie synonimów typów z aliasami typów
 
 Rust umożliwia deklarowanie *aliasu typu*, aby nadać istniejącemu typowi
 inną nazwę. W tym celu używamy słowa kluczowego `type`. Na przykład możemy utworzyć
@@ -120,7 +120,7 @@ Alias ​​typu pomaga na dwa sposoby: ułatwia pisanie kodu *i* daje nam spój
 po prostu kolejnym `Result<T, E>`, co oznacza, że ​​możemy używać z nim dowolnych metod, które działają na
 `Result<T, E>`, a także specjalnej składni, takiej jak operator `?`.
 
-### The Never Type that Never Returns
+### Typ Never, który nigdy nie zwraca
 
 Rust ma specjalny typ o nazwie `!`, który w żargonie teorii typów jest znany jako
 *typ pusty*, ponieważ nie ma wartości. My wolimy nazywać go *typem nigdy*,
@@ -190,7 +190,7 @@ Jednym z ostatnich wyrażeń, które ma typ `!`, jest `loop`:
 Tutaj pętla nigdy się nie kończy, więc `!` jest wartością wyrażenia. Jednak nie byłoby to prawdą, gdybyśmy dołączyli `break`, ponieważ pętla zakończyłaby się,
 gdyby dotarła do `break`.
 
-### Dynamically Sized Types and the `Sized` Trait
+### Typy o dynamicznym rozmiarze i cecha „Sized”
 
 Rust musi znać pewne szczegóły dotyczące swoich typów, takie jak ilość miejsca,
 które należy przydzielić na wartość określonego typu. To sprawia, że ​​jeden z aspektów jego systemu typów

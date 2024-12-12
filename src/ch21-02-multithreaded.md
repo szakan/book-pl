@@ -6,7 +6,7 @@ serwer otrzymywał coraz więcej żądań, to szeregowe wykonywanie byłoby cora
 mniej optymalne. Jeśli serwer otrzyma żądanie, którego przetwarzanie zajmuje dużo czasu, kolejne żądania będą musiały czekać, aż długie żądanie zostanie
 zakończone, nawet jeśli nowe żądania można przetworzyć szybko. Będziemy musieli to naprawić, ale najpierw przyjrzymy się problemowi w działaniu.
 
-### Simulating a Slow Request in the Current Server Implementation
+### Symulacja powolnego żądania w bieżącej implementacji serwera
 
 Przyjrzymy się, jak wolno przetwarzane żądanie może wpłynąć na inne żądania kierowane do
 naszej obecnej implementacji serwera. W listingu 21-10 zaimplementowano obsługę żądania
@@ -42,7 +42,7 @@ Ale jeśli wpiszesz */sleep*, a następnie załadujesz */*, zobaczysz, że */* c
 Istnieje wiele technik, których moglibyśmy użyć, aby uniknąć cofania się żądań za
 wolnym żądaniem; tą, którą zaimplementujemy, jest pula wątków.
 
-### Improving Throughput with a Thread Pool
+### Poprawa przepustowości za pomocą puli wątków
 
 *Pula wątków* to grupa utworzonych wątków, które czekają i są gotowe do
 obsługi zadania. Gdy program otrzymuje nowe zadanie, przypisuje jeden z
@@ -91,7 +91,7 @@ przeanalizujemy technikę, której nie będziemy używać jako punktu wyjścia.
 <!-- Old headings. Do not remove or links may break. -->
 <a id="code-structure-if-we-could-spawn-a-thread-for-each-request"></a>
 
-#### Spawning a Thread for Each Request
+#### Tworzenie wątku dla każdego żądania
 
 Najpierw sprawdźmy, jak mógłby wyglądać nasz kod, gdyby tworzył nowy wątek dla
 każdego połączenia. Jak wspomniano wcześniej, nie jest to nasz ostateczny plan ze względu na
@@ -119,7 +119,7 @@ nowe wątki bez żadnych ograniczeń.
 <!-- Old headings. Do not remove or links may break. -->
 <a id="creating-a-similar-interface-for-a-finite-number-of-threads"></a>
 
-#### Creating a Finite Number of Threads
+#### Tworzenie skończonej liczby wątków
 
 Chcemy, aby nasza pula wątków działała w podobny, znany sposób, więc przejście z
 wątków na pulę wątków nie wymagało dużych zmian w kodzie, który używa
@@ -142,7 +142,7 @@ skompiluje, ale spróbujemy, aby kompilator mógł nas pokierować, jak to napra
 <!-- Stare nagłówki. Nie usuwaj, ponieważ linki mogą się zepsuć. -->
 <a id="building-the-threadpool-struct-using-compiler-driven-development"></a>
 
-#### Building `ThreadPool` Using Compiler Driven Development
+#### Budowanie `ThreadPool` przy użyciu kompilatora sterowanego rozwojem
 
 Wprowadź zmiany w Listingu 21-12 do *src/main.rs*, a następnie użyjmy
 błędów kompilatora z `cargo check` do sterowania naszym rozwojem. Oto pierwszy
@@ -276,7 +276,7 @@ rozdziału. Nasza biblioteka nie wywołuje jeszcze zamknięcia przekazanego do `
 > zacząć pisać testy jednostkowe, aby sprawdzić, czy kod się kompiluje *i* zachowuje się tak, jak
 > chcemy.
 
-#### Validating the Number of Threads in `new`
+#### Sprawdzanie liczby wątków w `new`
 
 Nie robimy nic z parametrami `new` i `execute`.
 Zaimplementujmy ciała tych funkcji z zachowaniem, jakiego chcemy. Na początek
@@ -311,7 +311,7 @@ podpisem, aby porównać ją z funkcją `new`:
 pub fn build(size: usize) -> Result<ThreadPool, PoolCreationError> {
 ```
 
-#### Creating Space to Store the Threads
+#### Tworzenie przestrzeni do przechowywania wątków
 
 Teraz, gdy mamy sposób, aby wiedzieć, że mamy prawidłową liczbę wątków do przechowywania w
 puli, możemy utworzyć te wątki i przechowywać je w strukturze `ThreadPool`
@@ -354,7 +354,7 @@ które zmienia rozmiar w miarę wstawiania elementów.
 
 Gdy ponownie uruchomisz `cargo check`, powinno się to powieść.
 
-#### A `Worker` Struct Responsible for Sending Code from the `ThreadPool` to a Thread
+#### Struktura `Worker` odpowiedzialna za wysyłanie kodu z `ThreadPool` do wątku
 
 W pętli `for` w Listingu 21-14 pozostawiliśmy komentarz dotyczący tworzenia
 wątków. Tutaj przyjrzymy się, jak faktycznie tworzymy wątki. Standardowa
@@ -425,7 +425,7 @@ Ten kod zostanie skompilowany i zapisze liczbę instancji `Worker`, które
 określiliśmy jako argument dla `ThreadPool::new`. Ale *nadal* nie przetwarzamy
 zamknięcia, które otrzymujemy w `execute`. Przyjrzyjmy się, jak to zrobić.
 
-#### Sending Requests to Threads via Channels
+#### Wysyłanie żądań do wątków za pośrednictwem kanałów
 
 Następnym problemem, z którym się zmierzymy, jest to, że zamknięcia nadane `thread::spawn` nie robią
 absolutnie nic. Obecnie otrzymujemy zamknięcie, które chcemy wykonać w metodzie
@@ -516,7 +516,7 @@ dzielić własność odbiornika.
 
 Dzięki tym zmianom kod się kompiluje! Docieramy do celu!
 
-#### Implementing the `execute` Method
+#### Implementacja metody `execute`
 
 W końcu zaimplementujmy metodę `execute` w `ThreadPool`. Zmienimy również
 `Job` ze struktury na alias typu dla obiektu cechy, który przechowuje typ zamknięcia,

@@ -5,7 +5,7 @@ Identifiers][raw-identifiers]<!-- ignore -->”). Identyfikatory to nazwy funkcj
 
 [raw-identifiers]: #raw-identifiers
 
-### Keywords Currently in Use
+### Słowa kluczowe aktualnie w użyciu
 
 Poniżej znajduje się lista słów kluczowych aktualnie używanych, wraz z opisem ich funkcji.
 
@@ -51,7 +51,7 @@ Poniżej znajduje się lista słów kluczowych aktualnie używanych, wraz z opis
 
 [union]: ../reference/items/unions.html
 
-### Keywords Reserved for Future Use
+### Słowa kluczowe zarezerwowane do wykorzystania w przyszłości
 
 Poniższe słowa kluczowe nie mają jeszcze przypisanej funkcji, ale są zarezerwowane przez Rust do potencjalnego przyszłego użytku.
 
@@ -69,7 +69,7 @@ Poniższe słowa kluczowe nie mają jeszcze przypisanej funkcji, ale są zarezer
 * `virtual`
 * `yield`
 
-### Raw Identifiers
+### Surowe identyfikatory
 
 Surowe identyfikatory to składnia, która pozwala używać słów kluczowych w miejscach, gdzie normalnie byłyby niedozwolone. Używasz surowego identyfikatora, poprzedzając słowo kluczowe prefiksem `r#`.
 

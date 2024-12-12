@@ -5,7 +5,7 @@ staje się coraz większa i będziesz chciał podzielić pakiet na
 wiele skrzyń bibliotecznych. Cargo oferuje funkcję o nazwie *workspaces*, która może
 pomóc w zarządzaniu wieloma powiązanymi pakietami, które są rozwijane równolegle.
 
-### Creating a Workspace
+### Tworzenie obszaru roboczego
 
 *Przestrzeń robocza* to zestaw pakietów, które współdzielą ten sam katalog *Cargo.lock* i wyjściowy. Stwórzmy projekt przy użyciu przestrzeni roboczej — użyjemy trywialnego kodu, aby
 skupić się na strukturze przestrzeni roboczej. Istnieje wiele sposobów
@@ -70,7 +70,7 @@ ponownie skompilować każdą z pozostałych skrzyń w obszarze roboczym, aby um
 w swoim własnym katalogu *target*. Dzięki współdzieleniu jednego katalogu *target* skrzynie
 mogą uniknąć niepotrzebnego przebudowywania.
 
-### Creating the Second Package in the Workspace
+### Tworzenie drugiego pakietu w obszarze roboczym
 
 Next, let’s create another member package in the workspace and call it
 `add_one`. Change the top-level *Cargo.toml* to specify the *add_one* path in
@@ -177,7 +177,7 @@ Witaj, świecie! 10 plus jeden to 11!
 
 Spowoduje to uruchomienie kodu w pliku *adder/src/main.rs*, który zależy od pakietu `add_one`.
 
-#### Depending on an External Package in a Workspace
+#### Poleganie na pakiecie zewnętrznym w obszarze roboczym
 
 Zauważ, że obszar roboczy ma tylko jeden plik *Cargo.lock* na najwyższym poziomie,
 zamiast mieć *Cargo.lock* w katalogu każdej skrzyni. Zapewnia to, że
@@ -264,7 +264,7 @@ nam miejsce i zapewniając, że skrzynie w obszarze roboczym będą ze sobą zgo
 Jeśli skrzynie w obszarze roboczym określają niezgodne wersje tej samej zależności,
 Cargo rozwiąże każdą z nich, ale nadal będzie próbował rozwiązać jak najmniej wersji.
 
-#### Adding a Test to a Workspace
+#### Dodawanie testu do obszaru roboczego
 
 Aby wprowadzić kolejne udoskonalenie, dodajmy test funkcji `add_one::add_one` w skrzyni `add_one`:
 

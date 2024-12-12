@@ -1,4 +1,4 @@
-# Object-Oriented Programming Features of Rust
+# Funkcje programowania obiektowego języka Rust
 
 Programowanie obiektowe (OOP) to sposób modelowania programów. Obiekty jako
 koncepcja programistyczna zostały wprowadzone w języku programowania Simula w

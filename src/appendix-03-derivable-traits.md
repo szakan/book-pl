@@ -34,7 +34,7 @@ których możesz użyć `derive`, jest naprawdę otwarta. Implementacja `derive`
 wymaga użycia makra proceduralnego, które jest omówione w sekcji
 [„Makra”][macros]<!-- ignore --> rozdziału 19.
 
-### `Debug` for Programmer Output
+### `Debug` dla wyjścia programisty
 
 Cecha `Debug` umożliwia formatowanie debugowania w ciągach formatujących, które wskazujesz, dodając `:?` w symbolach zastępczych `{}`.
 
@@ -44,7 +44,7 @@ w określonym punkcie wykonywania programu.
 Cecha `Debug` jest wymagana na przykład podczas korzystania z makra `assert_eq!`.
 To makro drukuje wartości wystąpień podanych jako argumenty, jeśli potwierdzenie równości się nie powiedzie, dzięki czemu programiści mogą zobaczyć, dlaczego dwa wystąpienia nie były równe.
 
-### `PartialEq` and `Eq` for Equality Comparisons
+### `PartialEq` i `Eq` do porównań równości
 
 Cecha `PartialEq` umożliwia porównywanie wystąpień typu w celu sprawdzenia równości i umożliwia użycie operatorów `==` i `!=`.
 
@@ -63,7 +63,7 @@ wystąpienia wartości niebędącej liczbą (`NaN`) nie są sobie równe.
 
 Przykładem sytuacji, w której `Eq` jest wymagane, są klucze w `HashMap<K, V>`, dzięki czemu
 `HashMap<K, V>` może stwierdzić, czy dwa klucze są takie same.
-### `PartialOrd` and `Ord` for Ordering Comparisons
+### `PartialOrd` i `Ord` do porównań porządkowych
 
 Cecha `PartialOrd` pozwala porównywać wystąpienia typu w celu sortowania. Typ implementujący `PartialOrd` może być używany z operatorami `<`, `>`,
 `<=` i `>=`. Cechę `PartialOrd` można stosować tylko do typów,
@@ -93,7 +93,7 @@ implementacja dla `partial_cmp` z `PartialOrd`.
 
 Przykładem sytuacji, gdy `Ord` jest wymagane, jest przechowywanie wartości w `BTreeSet<T>`,
 strukturze danych, która przechowuje dane na podstawie kolejności sortowania wartości.
-### `Clone` and `Copy` for Duplicating Values
+### `Clone` i `Copy` w celu duplikowania wartości
 
 Cecha `Klon` pozwala jawnie utworzyć głęboką kopię wartości, a
 proces duplikacji może obejmować uruchomienie dowolnego kodu i skopiowanie danych ze sterty. Więcej informacji na temat `Klonu` można znaleźć w sekcji [„Sposoby interakcji zmiennych i danych:
@@ -130,7 +130,7 @@ kod jest bardziej zwięzły.
 Wszystko, co możliwe za pomocą `Copy`, możesz również osiągnąć za pomocą `Clone`, ale
 kod może być wolniejszy lub trzeba będzie użyć `clone` w niektórych miejscach.
 
-### `Hash` for Mapping a Value to a Value of Fixed Size
+### `Hash` do mapowania wartości na wartość o stałym rozmiarze
 
 Cecha `Hash` pozwala na pobranie instancji typu o dowolnym rozmiarze i
 zamapowanie tej instancji na wartość o stałym rozmiarze za pomocą funkcji skrótu. Wyprowadzenie
@@ -141,7 +141,7 @@ co oznacza, że ​​wszystkie pola lub wartości muszą również implementowa
 Przykładem sytuacji, gdy `Hash` jest wymagany, jest przechowywanie kluczy w `HashMap<K, V>`
 w celu wydajnego przechowywania danych.
 
-### `Default` for Default Values
+### `Default` dla wartości domyślnych
 
 Cecha `Default` pozwala na utworzenie wartości domyślnej dla typu. Pochodna
 `Default` implementuje funkcję `default`. Pochodna implementacja funkcji

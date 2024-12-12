@@ -4,7 +4,7 @@ Po raz pierwszy omówiliśmy cechy w sekcji [„Cechy: Definiowanie współdziel
 zachowania”][traits-defining-shared-behavior]<!-- ignore --> rozdziału
 10, ale nie omawialiśmy bardziej zaawansowanych szczegółów. Teraz, gdy wiesz więcej o Rust, możemy przejść do szczegółów.
 
-### Specifying Placeholder Types in Trait Definitions with Associated Types
+### Określanie typów zastępczych w definicjach cech z typami skojarzonymi
 
 *Typy skojarzone* łączą symbol zastępczy typu z cechą, tak że definicje
 metod cech mogą używać tych typów symboli zastępczych w swoich sygnaturach.
@@ -82,7 +82,7 @@ cechy muszą dostarczyć typ, który zastąpi symbol zastępczy typu skojarzoneg
 Typy skojarzone często mają nazwę opisującą sposób użycia typu,
 a dokumentowanie typu skojarzonego w dokumentacji API jest dobrą praktyką.
 
-### Default Generic Type Parameters and Operator Overloading
+### Domyślne parametry typu generycznego i przeciążanie operatora
 
 Gdy używamy parametrów typu generycznego, możemy określić domyślny konkretny typ dla
 typu generycznego. Eliminuje to potrzebę, aby implementatorzy cechy
@@ -168,7 +168,7 @@ parametr typu do istniejącej cechy, możesz nadać mu wartość domyślną, aby
 rozszerzenie funkcjonalności cechy bez naruszania istniejącego
 kodu implementacji.
 
-### Fully Qualified Syntax for Disambiguation: Calling Methods with the Same Name
+### W pełni kwalifikowana składnia do ujednoznaczniania: wywoływanie metod o tej samej nazwie
 
 Nic w Rust nie zabrania, aby cecha miała metodę o tej samej nazwie co
 metoda innej cechy, ani Rust nie zabrania implementacji obu cech
@@ -314,7 +314,7 @@ w programie. Musisz użyć tej bardziej rozwlekłej składni tylko w przypadkach
 istnieje wiele implementacji, które używają tej samej nazwy, a Rust potrzebuje pomocy,
 aby zidentyfikować implementację, którą chcesz wywołać.
 
-### Using Supertraits to Require One Trait’s Functionality Within Another Trait
+### Używanie supercech w celu wymagania funkcjonalności jednej cechy w obrębie innej cechy
 
 Czasami możesz napisać definicję cechy, która zależy od innej cechy:
 aby typ zaimplementował pierwszą cechę, chcesz wymagać, aby ten typ również
@@ -389,7 +389,7 @@ Aby to naprawić, implementujemy `Display` w `Point` i spełniamy ograniczenie, 
 
 Następnie zaimplementowanie cechy `OutlinePrint` w `Point` skompiluje się pomyślnie i możemy wywołać `outline_print` na instancji `Point`, aby wyświetlić ją w obrysie gwiazdek.
 
-### Using the Newtype Pattern to Implement External Traits on External Types
+### Wykorzystanie wzorca Newtype do implementacji cech zewnętrznych w typach zewnętrznych
 
 W rozdziale 10 w sekcji [„Implementowanie cechy w
 typie”][implementing-a-trait-on-a-type]<!-- ignore --> wspomnieliśmy o

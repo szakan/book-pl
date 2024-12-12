@@ -1,10 +1,10 @@
-## Generic Typy danych
+## Typ ogólny Typ danych
 
 Używamy generyków do tworzenia definicji dla elementów, takich jak sygnatury funkcji lub
 struktury, których możemy następnie używać z wieloma różnymi konkretnymi typami danych. Najpierw przyjrzyjmy się, jak definiować funkcje, struktury, wyliczenia i metody przy użyciu
 generyków. Następnie omówimy, jak generyki wpływają na wydajność kodu.
 
-### In Function Definitions
+### W definicjach funkcji
 
 Definiując funkcję, która używa generyków, umieszczamy generyki w sygnaturze funkcji, w której zwykle określamy typy danych parametrów i wartości zwracanej. Dzięki temu nasz kod staje się bardziej elastyczny i zapewnia
 więcej funkcji wywołującym naszą funkcję, jednocześnie zapobiegając duplikacji kodu.
@@ -75,7 +75,7 @@ biblioteka ma cechę `std::cmp::PartialOrd`, którą można zaimplementować w t
 `PartialOrd`, a ten przykład zostanie skompilowany, ponieważ standardowa
 biblioteka implementuje `PartialOrd` zarówno w `i32`, jak i `char`.
 
-### In Struct Definitions
+### W definicjach struktur
 
 Możemy również zdefiniować struktury, aby użyć parametru typu generycznego w jednym lub większej liczbie pól, używając składni `<>`. Listing 10-6 definiuje strukturę `Point<T>`, aby przechowywać wartości współrzędnych `x` i `y` dowolnego typu.
 
@@ -129,7 +129,7 @@ i `U`, gdzie `x` jest typu `T`, a `y` jest typu `U`.
 Teraz wszystkie pokazane wystąpienia `Point` są dozwolone! Możesz użyć tylu parametrów typu generycznego, ile chcesz w definicji, ale użycie więcej niż kilku sprawia, że ​​kod jest trudny do odczytania. Jeśli stwierdzasz, że potrzebujesz wielu typów generycznych w swoim kodzie, może to oznaczać, że kod wymaga restrukturyzacji na mniejsze
 części.
 
-### In Enum Definitions
+### W definicjach wyliczeniowych
 
 Podobnie jak w przypadku struktur, możemy zdefiniować wyliczenia, aby przechowywać ogólne typy danych w ich wariantach. Przyjrzyjmy się ponownie wyliczeniu `Option<T>`, które zapewnia standardowa
 biblioteka, a którego użyliśmy w rozdziale 6:
@@ -171,7 +171,7 @@ Gdy rozpoznasz sytuacje w swoim kodzie z wieloma definicjami struktur lub wylicz
 które różnią się tylko typami przechowywanych przez nie wartości, możesz
 uniknąć duplikacji, używając zamiast tego typów generycznych.
 
-### In Method Definitions
+### W Definicje metod
 
 We can implement methods on structs and enums (as we did in Chapter 5) and use
 generic types in their definitions too. Listing 10-9 shows the `Point<T>`
@@ -237,7 +237,7 @@ metody. Tutaj parametry generyczne `X1` i `Y1` są deklarowane po
 i `Y2` są deklarowane po `fn mixup`, ponieważ są istotne tylko dla
 metody.
 
-### Performance of Code Using Generics
+### Wydajność kodu przy użyciu typów ogólnych
 
 Możesz się zastanawiać, czy istnieje koszt wykonania podczas korzystania z parametrów typu generycznego. Dobra wiadomość jest taka, że ​​korzystanie z typów generycznych nie sprawi, że program będzie działał wolniej niż w przypadku typów konkretnych.
 

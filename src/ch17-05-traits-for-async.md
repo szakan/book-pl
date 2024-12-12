@@ -1,4 +1,4 @@
-## Digging Into the Traits for Async
+## Zagłębianie się w cechy asynchroniczne
 
 W całym rozdziale używaliśmy cech `Future`, `Pin`, `Unpin`, `Stream` i
 `StreamExt` na różne sposoby. Jak dotąd unikaliśmy jednak zbytniego zagłębiania się
@@ -8,7 +8,7 @@ na sytuacje, w których zrozumienie kilku dodatkowych szczegółów ma znaczenie
 sekcji zagłębimy się *wystarczająco* głębiej, aby pomóc w takich sytuacjach — jednocześnie
 pozostawiając *naprawdę* głębokie nurkowanie na inną dokumentację!
 
-### Future
+### Przyszły
 
 Back in [Futures i Składnia asynchroniczna][futures-syntax], we noted that `Future`
 is a trait. Let’s start by taking a closer look at how it works. Here is how
@@ -110,7 +110,7 @@ Dokładne szczegóły tego, jak środowisko wykonawcze to robi, wykraczają poza
 głębokiej sekcji. Kluczem jest tutaj dostrzeżenie podstawowej mechaniki przyszłości: środowisko wykonawcze *sonduje* każdą przyszłość, za którą jest odpowiedzialne, usypiając ją, gdy
 jeszcze nie jest gotowa.
 
-### Pinning and the Pin and Unpin Traits
+### Przypinanie i cechy przypinania i odpinania
 
 Kiedy wprowadziliśmy pomysł przypinania podczas pracy nad Listingiem 17-17, natknęliśmy się na bardzo paskudny komunikat o błędzie. Oto jego istotna część:
 
@@ -248,7 +248,7 @@ niezwiązanych danych.
 
 <img alt="Concurrent work flow" src="img/trpl17-05.svg" class="center" />
 
-<figcaption>Figure 17-5: The unsafe result of moving a self-referential data type.</figcaption>
+<figcaption>Rysunek 17-5: Niebezpieczny wynik przenoszenia typu danych samoodnoszącego się.</figcaption>
 
 </figure>
 
@@ -267,7 +267,7 @@ wskaźnik `Box`. Ilustruje to Rysunek 17-6:
 
 <img alt="Concurrent work flow" src="img/trpl17-06.svg" class="center" />
 
-<figcaption>Figure 17-6: Pinning a `Box` which points to a self-referential future type.</figcaption>
+<figcaption>Rysunek 17-6: Przypinanie „Pola” wskazującego na typ przyszłości odnoszący się do samego siebie.</figcaption>
 
 </figure>
 
@@ -333,7 +333,7 @@ To właśnie dlatego implementuje `Unpin`, a nie `!Unpin`.
 
 <img alt="Concurrent work flow" src="img/trpl17-09.svg" class="center" />
 
-<figcaption>Figure 17-9: Replacing the String with an entirely different String in memory.</figcaption>
+<figcaption>Rysunek 17-9: Zastępowanie ciągu znaków zupełnie innym ciągiem znaków w pamięci.</figcaption>
 
 </figure>
 
@@ -359,13 +359,13 @@ pojęcie, jak naprawić kod!
 > jeśli chcesz je lepiej zrozumieć, to jest to świetne miejsce na początek.
 >
 > Jeśli chcesz zrozumieć, jak wszystko działa „pod maską” jeszcze bardziej
-> szczegółowo, oficjalna książka [_Asynchronous Programming in Rust_][async-book]
+> szczegółowo, oficjalna książka [_Programowanie asynchroniczne w Rust_][async-book]
 > obejmuje:
 >
-> - [Chapter 2: Under the Hood: Executing Futures and Tasks][under-the-hood]
-> - [Chapter 4: Pinning][pinning]
+> - [Rozdział 2: Pod maską: wykonywanie przyszłych zadań i zadań][under-the-hood]
+> - [Rozdział 4: Przypinanie][pinning]
 
-### The Stream Trait
+### Cecha strumienia
 
 Teraz, gdy lepiej rozumiemy cechy `Future`, `Pin` i `Unpin`,
 możemy skupić się na cesze `Stream`. Jak opisano w sekcji

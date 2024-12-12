@@ -9,7 +9,7 @@ napisać własne funkcje współbieżności lub użyć tych napisanych przez inn
 Jednak w języku osadzone są dwie koncepcje współbieżności: cechy
 `std::marker` `Sync` i `Send`.
 
-### Allowing Transference of Ownership Between Threads with `Send`
+### Zezwalanie na przenoszenie własności między wątkami za pomocą `Send`
 
 Cecha znacznika `Send` wskazuje, że własność wartości typu
 implementującego `Send` może być przenoszona między wątkami. Prawie każdy typ Rust
@@ -29,7 +29,7 @@ skompilował się.
 Każdy typ złożony w całości z typów `Send` jest automatycznie oznaczany jako `Send`. Niemal wszystkie typy prymitywne to `Send`, poza wskaźnikami, które
 omówimy w rozdziale 20.
 
-### Allowing Access from Multiple Threads with `Sync`
+### Zezwalanie na dostęp z wielu wątków za pomocą `Sync`
 
 Cecha znacznika `Sync` wskazuje, że typ implementujący
 `Sync` może być bezpiecznie odwoływany z wielu wątków. Innymi słowy, każdy typ `T` jest

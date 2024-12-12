@@ -20,7 +20,7 @@ wykonywać pewnych zadań. Rust musi umożliwiać programowanie systemów niskie
 pisanie własnego systemu operacyjnego. Praca z programowaniem systemów niskiego poziomu jest jednym z celów tego języka. Przyjrzyjmy się, co możemy zrobić z niebezpiecznym
 Rust i jak to zrobić.
 
-### Unsafe Superpowers
+### Niebezpieczne supermoce
 
 Aby przejść do niebezpiecznego Rusta, użyj słowa kluczowego `unsafe`, a następnie rozpocznij nowy blok,
 który zawiera niebezpieczny kod. Możesz wykonać pięć czynności w niebezpiecznym Ruście, których nie możesz wykonać w bezpiecznym Ruście, które nazywamy *niebezpiecznymi supermocami*. Te supermoce
@@ -57,7 +57,7 @@ abstrakcji jest bezpieczne.
 Przyjrzyjmy się po kolei każdej z pięciu niebezpiecznych supermocy. Przyjrzymy się również
 niektórym abstrakcjom, które zapewniają bezpieczny interfejs dla niebezpiecznego kodu.
 
-### Dereferencing a Raw Pointer
+### Dereferencja surowego wskaźnika
 
 W rozdziale 4, w sekcji [„Dangling References”][dangling-references]<!-- ignore
 -->, wspomnieliśmy, że kompilator zapewnia, że ​​odwołania są zawsze
@@ -143,7 +143,7 @@ budowanie bezpiecznych abstrakcji, których sprawdzanie pożyczania nie rozumie.
 Wprowadzimy niebezpieczne funkcje, a następnie przyjrzymy się przykładowi bezpiecznej
 abstrakcji, która używa niebezpiecznego kodu.
 
-### Calling an Unsafe Function or Method
+### Wywoływanie niebezpiecznej funkcji lub metody
 
 Drugim typem operacji, którą możesz wykonać w bloku unsafe, jest wywoływanie
 niebezpiecznych funkcji. Niebezpieczne funkcje i metody wyglądają dokładnie tak samo jak zwykłe
@@ -175,7 +175,7 @@ Bodies of unsafe functions are effectively `unsafe` blocks, so to perform other
 unsafe operations within an unsafe function, we don’t need to add another
 `unsafe` block.
 
-#### Creating a Safe Abstraction over Unsafe Code
+#### Tworzenie bezpiecznej abstrakcji na niebezpiecznym kodzie
 
 Tylko dlatego, że funkcja zawiera niebezpieczny kod, nie oznacza, że ​​musimy oznaczyć
 całą funkcję jako niebezpieczną. W rzeczywistości, owinięcie niebezpiecznego kodu w bezpieczną funkcję jest
@@ -281,7 +281,7 @@ W przeciwieństwie do tego, użycie `slice::from_raw_parts_mut` w Liście 20-7 p
 Nie jesteśmy właścicielami pamięci w tej dowolnej lokalizacji i nie ma gwarancji, że wycinek tworzony przez ten kod zawiera prawidłowe wartości `i32`. Próba użycia
 `wartości` tak, jakby był to prawidłowy wycinek, skutkuje niezdefiniowanym zachowaniem.
 
-#### Using `extern` Funkcje to Call External Code
+#### Używając `extern` Funkcja do wywołania kodu zewnętrznego
 
 Czasami kod Rust może wymagać interakcji z kodem napisanym w innym
 języku. W tym celu Rust ma słowo kluczowe `extern`, które ułatwia tworzenie
@@ -333,7 +333,7 @@ najbardziej powszechny i ​​podąża za ABI języka programowania C.
 >
 > This usage of `extern` does not require `unsafe`.
 
-### Accessing or Modifying a Mutable Static Variable
+### Dostęp do zmiennej statycznej lub jej modyfikacja
 
 W tej książce nie omawialiśmy jeszcze *zmiennych globalnych*, które Rust obsługuje, ale mogą być problematyczne z powodu reguł własności Rusta. Jeśli dwa wątki
 uzyskują dostęp do tej samej zmiennej zmiennej globalnej, może to spowodować wyścig danych.
@@ -386,7 +386,7 @@ niebezpieczne. Jeśli to możliwe, lepiej jest używać technik współbieżnoś
 bezpiecznych dla wątków inteligentnych wskaźników, które omówiliśmy w rozdziale 16, aby kompilator sprawdzał,
 czy dane dostępne z różnych wątków są bezpieczne.
 
-### Implementing an Unsafe Trait
+### Wdrażanie niebezpiecznej cechy
 
 Możemy użyć `unsafe`, aby zaimplementować niebezpieczną cechę. Cecha jest niebezpieczna, gdy
 przynajmniej jedna z jej metod ma jakiś niezmiennik, którego kompilator nie może zweryfikować.
@@ -415,7 +415,7 @@ i chcemy oznaczyć ten typ jako `Send` lub `Sync`, musimy użyć `unsafe`. Rust
 nie może zweryfikować, czy nasz typ przestrzega gwarancji, że można go bezpiecznie wysłać
 przez wątki lub uzyskać do niego dostęp z wielu wątków; Dlatego musimy wykonać te sprawdzenia ręcznie i oznaczyć je jako `unsafe`.
 
-### Accessing Fields of a Union
+### Dostęp do pól unii
 
 Ostatnią akcją, która działa tylko z `unsafe`, jest dostęp do pól
 *union*. `Union` jest podobny do `struct`, ale tylko jedno zadeklarowane pole jest
@@ -423,7 +423,7 @@ używane w danym wystąpieniu na raz. Unie są używane głównie do
 interfejsu z uniami w kodzie C. Dostęp do pól unii jest niebezpieczny, ponieważ Rust
 nie może zagwarantować typu danych aktualnie przechowywanych w wystąpieniu unii. Możesz dowiedzieć się więcej o uniach w [Rust Reference][reference].
 
-### When to Use Unsafe Code
+### Kiedy używać niebezpiecznego kodu
 
 Użycie `unsafe` do wykonania jednej z pięciu czynności (supermocy) omówionych powyżej
 nie jest złe, ani nawet źle widziane. Jednak trudniej jest uzyskać poprawny kod `unsafe`,

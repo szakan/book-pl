@@ -16,7 +16,7 @@ aby upewnić się, że rzeczywiste odniesienia używane w czasie wykonywania bę
 
 Adnotowanie okresów życia nie jest nawet koncepcją, którą posiada większość innych języków programowania, więc będzie to dla Ciebie nieznane. Chociaż nie omówimy okresów życia w całości w tym rozdziale, omówimy typowe sposoby, w jakie możesz się zetknąć ze składnią okresu życia, abyś mógł się oswoić z tą koncepcją.
 
-### Preventing Dangling References with Lifetimes
+### Zapobieganie zwisającym odniesieniom za pomocą czasów życia
 
 Głównym celem czasów życia jest zapobieganie *wiszącym odniesieniom*, które powodują, że
 program odwołuje się do danych innych niż te, do których ma się odwoływać.
@@ -52,7 +52,7 @@ zwolniona, gdy `x` wyszło poza zakres, a wszystko, co próbowaliśmy zrobić z 
 nie działałoby poprawnie. Jak więc Rust ustala, że ​​ten kod jest nieprawidłowy?
 Używa sprawdzania pożyczania.
 
-### The Borrow Checker
+### Sprawdzanie pożyczek
 
 Kompilator Rust ma *sprawdzacz pożyczania*, który porównuje zakresy, aby ustalić,
 czy wszystkie pożyczenia są prawidłowe. Listing 10-17 pokazuje ten sam kod, co Listing 10-16, ale z adnotacjami pokazującymi czasy życia zmiennych.
@@ -88,7 +88,7 @@ Teraz, gdy wiesz, gdzie są czasy życia odwołań i jak Rust analizuje
 czasy życia, aby zapewnić, że odwołania będą zawsze prawidłowe, przyjrzyjmy się ogólnym
 czasom życia parametrów i wartościom zwracanym w kontekście funkcji.
 
-### Generic Lifetimes in Funkcje
+### Ogólne czasy życia w funkcji
 
 Napiszemy funkcję, która zwraca dłuższy z dwóch wycinków ciągu. Ta
 funkcja przyjmie dwa wycinki ciągu i zwróci jeden wycinek ciągu. Po
@@ -143,7 +143,7 @@ wartości zwracanej. Aby naprawić ten błąd, dodamy ogólne parametry czasu ż
 definiują relację między odniesieniami, aby sprawdzanie pożyczania mogło
 wykonać swoją analizę.
 
-### Lifetime Annotation Syntax
+### Składnia adnotacji czasu życia
 
 Adnotacje czasu życia nie zmieniają czasu życia żadnego z odniesień. Zamiast tego
 opisują relacje czasu życia wielu odniesień do siebie
@@ -165,7 +165,7 @@ Oto kilka przykładów: odwołanie do `i32` bez parametru czasu życia, odwołan
 ```
 
 Jedna adnotacja czasu życia sama w sobie nie ma większego znaczenia, ponieważ adnotacje mają na celu poinformowanie Rusta, jak ogólne parametry czasu życia wielu odniesień odnoszą się do siebie. Przyjrzyjmy się, jak adnotacje czasu życia odnoszą się do siebie w kontekście funkcji `longest`.
-### Lifetime Annotations in Function Signatures
+### Adnotacje czasu życia w sygnaturach funkcji
 
 Aby użyć adnotacji czasu życia w sygnaturach funkcji, musimy zadeklarować
 ogólne parametry *lifetime* w nawiasach kątowych między nazwą funkcji
@@ -279,7 +279,7 @@ odniesień przekazanych do funkcji `longest` i sposób, w jaki zwrócone odniesi
 jest używane. Przed kompilacją stwórz hipotezy na temat tego, czy Twoje eksperymenty przejdą
 sprawdzanie pożyczania; a następnie sprawdź, czy masz rację!
 
-### Thinking in Terms of Lifetimes
+### Myślenie w kategoriach życia
 
 Sposób, w jaki musisz określić parametry czasu życia, zależy od tego, co robi twoja
 funkcja. Na przykład, gdybyśmy zmienili implementację funkcji
@@ -328,7 +328,7 @@ parametrów i wartości zwracanych przez funkcje. Po ich połączeniu Rust ma
 wystarczająco dużo informacji, aby zezwolić na operacje bezpieczne dla pamięci i zabronić operacji,
 które utworzyłyby zwisające wskaźniki lub w inny sposób naruszyły bezpieczeństwo pamięci.
 
-### Lifetime Annotations in Struct Definitions
+### Adnotacje czasu życia w definicjach struktur
 
 Do tej pory wszystkie zdefiniowane przez nas struktury były typami typu hold owned. Możemy definiować struktury, aby
 przechowywać referencje, ale w takim przypadku musielibyśmy dodać adnotację czasu życia do
@@ -357,7 +357,7 @@ zmiennej `novel`. Dane w `novel` istnieją przed utworzeniem instancji `Importan
 `ImportantExcerpt` nie wyjdzie poza zakres, więc odwołanie w instancji
 `ImportantExcerpt` jest prawidłowe.
 
-### Lifetime Elision
+### Elizja na całe życie
 
 Dowiedziałeś się, że każde odwołanie ma czas życia i że musisz określić
 parametry czasu życia dla funkcji lub struktur, które używają odwołań. Jednak w
@@ -482,7 +482,7 @@ Listingu 10-20: kompilator przejrzał reguły eliminacji czasu życia, ale nadal
 Ponieważ trzecia reguła dotyczy wyłącznie sygnatur metod, przyjrzymy się
 czasom życia w tym kontekście, aby zobaczyć, dlaczego trzecia reguła oznacza, że ​​nie musimy zbyt często adnotować czasów życia w sygnaturach metod.
 
-### Lifetime Annotations in Method Definitions
+### Adnotacje czasu życia w definicjach metod
 
 Gdy implementujemy metody w strukturze z czasami życia, używamy tej samej składni, co
 parametry typu ogólnego pokazane w Liście 10-11. Miejsce, w którym deklarujemy i
@@ -520,7 +520,7 @@ i nadaje zarówno `&self`, jak i `announcement` własne okresy życia. Następni
 jednym z parametrów jest `&self`, typ zwracany otrzymuje okres życia `&self`,
 a wszystkie okresy życia zostały uwzględnione.
 
-### The Static Lifetime
+### Statyczny czas życia
 
 Jednym ze specjalnych okresów życia, który musimy omówić, jest `'static`, co oznacza, że
 dotknięte odniesienie *może* żyć przez cały czas trwania programu. Wszystkie
@@ -542,7 +542,7 @@ sugerujący czas życia `'static` wynika z próby utworzenia wiszącego
 odniesienia lub niezgodności dostępnych czasów życia. W takich przypadkach rozwiązaniem
 jest naprawienie tych problemów, a nie określenie czasu życia `'static`.
 
-## Generic Type Parameters, Trait Bounds, and Lifetimes Together
+## Parametry typu ogólnego, granice cech i okresy życia razem
 
 Przyjrzyjmy się pokrótce składni określania parametrów typu ogólnego, granic cech i okresów życia – wszystko w jednej funkcji!
 
@@ -557,7 +557,7 @@ przy użyciu `{}`, dlatego ograniczenie cechy `Display` jest konieczne. Poniewa�
 czasy życia są typem generycznym, deklaracje parametru czasu życia
 `'a` i parametru typu generycznego `T` znajdują się na tej samej liście wewnątrz nawiasów kątowych po nazwie funkcji.
 
-## Summary
+## Streszczenie
 
 W tym rozdziale omówiliśmy wiele! Teraz, gdy wiesz już o parametrach
 typu generycznego, cechach i granicach cech oraz ogólnych parametrach czasu życia, jesteś

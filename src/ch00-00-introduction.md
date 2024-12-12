@@ -1,7 +1,7 @@
 # Wstęp
 
-> Uwaga: Niniejsze tłumaczenie oparto na wydaniu książki [The Rust Programming
-> Language][nsprust] dostępnej w druku oraz w wersji elektronicznej, wydanych
+> Uwaga: Niniejsze tłumaczenie oparto na wydaniu książki [Programowanie Rust
+> Język][nsprust] dostępnej w druku oraz w wersji elektronicznej, wydanych
 > przez [No Starch Press][nsp].
 
 [nsprust]: https://nostarch.com/rust-programming-language-2nd-edition

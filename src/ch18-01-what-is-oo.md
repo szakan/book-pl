@@ -8,7 +8,7 @@ mają pewne wspólne cechy, a mianowicie obiekty, hermetyzację i
 dziedziczenie. Przyjrzyjmy się, co oznacza każda z tych cech i czy
 Rust ją obsługuje.
 
-### Objects Contain Data and Behavior
+### Obiekty zawierają dane i zachowania
 
 Książka *Design Patterns: Elements of Reusable Object-Oriented Software* autorstwa
 
@@ -24,7 +24,7 @@ a bloki `impl` dostarczają metod strukturom i wyliczeniom. Mimo że struktury i
 wyliczenia z metodami nie są *nazywane* obiektami, zapewniają tę samą
 funkcjonalność, zgodnie z definicją obiektów Gang of Four.
 
-### Encapsulation that Hides Implementation Details
+### Enkapsulacja ukrywająca szczegóły implementacji
 
 Innym aspektem powszechnie kojarzonym z OOP jest idea *enkapsulacji*,
 co oznacza, że ​​szczegóły implementacji obiektu nie są dostępne dla
@@ -88,7 +88,7 @@ kod prawdopodobnie musiałby się zmienić, gdyby modyfikował `list` bezpośred
 
 Jeśli hermetyzacja jest wymaganym aspektem języka, aby można go było uznać za obiektowy, to Rust spełnia ten wymóg. Możliwość użycia `pub` lub nie dla różnych części kodu umożliwia hermetyzację szczegółów implementacji.
 
-### Inheritance as a Type System and as Code Sharing
+### Dziedziczenie jako system typów i współdzielenie kodu
 
 *Dziedziczenie* to mechanizm, dzięki któremu obiekt może dziedziczyć elementy z
 definicji innego obiektu, uzyskując w ten sposób dane i zachowanie obiektu nadrzędnego

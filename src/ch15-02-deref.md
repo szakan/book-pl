@@ -1,4 +1,4 @@
-## Treating Inteligentne wskaźniki Like Regular References with the `Deref` Trait
+## Traktowanie inteligentnych znaczników jak zwykłych odniesień z cechą  `Deref`
 
 Implementacja cechy `Deref` pozwala dostosować zachowanie
 *operatora dereferencji* `*` (nie mylić z operatorem mnożenia lub glob). Implementując `Deref` w taki sposób, że inteligentny wskaźnik może być
@@ -20,7 +20,7 @@ funkcji *przymusu deref* w Rust i temu, jak pozwala nam ona pracować zarówno z
 <!-- Stary link, nie usuwaj -->
 <a id="following-the-pointer-to-the-value-with-the-dereference-operator"></a>
 
-### Following the Pointer to the Value
+### Podążanie za wskaźnikiem do wartości
 
 Regularne odniesienie jest typem wskaźnika, a jednym ze sposobów myślenia o wskaźniku jest
 jak strzałka do wartości przechowywanej gdzie indziej. W Listingu 15-6 tworzymy
@@ -54,7 +54,7 @@ Porównywanie liczby i odwołania do liczby nie jest dozwolone, ponieważ są on
 różnymi typami. Musimy użyć operatora dereferencji, aby śledzić odwołanie
 do wartości, na którą wskazuje.
 
-### Using `Box<T>` Like a Reference
+### Używanie `Box<T>` jako odniesienia
 
 Możemy przepisać kod z Listingu 15-6, aby użyć `Box<T>` zamiast
 referencji; operator dereferencji użyty w `Box<T>` w Listingu 15-7
@@ -76,7 +76,7 @@ odniesienie wskazujące na wartość `x`. W ostatnim stwierdzeniu możemy
 używać operatora dereferencji, aby śledzić wskaźnik `Box<T>` w taki sam sposób, w jaki robiliśmy to, gdy `y` było odniesieniem. Następnie zbadamy, co jest specjalnego w `Box<T>`, co pozwala nam używać operatora dereferencji poprzez
 zdefiniowanie własnego typu.
 
-### Defining Our Own Smart Pointer
+### Definiowanie własnego inteligentnego wskaźnika
 
 Zbudujmy inteligentny wskaźnik podobny do typu `Box<T>` dostarczanego przez
 bibliotekę standardową, aby zobaczyć, jak inteligentne wskaźniki zachowują się inaczej niż
@@ -122,7 +122,7 @@ Oto wynikowy błąd kompilacji:
 Nasz typ `MyBox<T>` nie może zostać dereferencjonowany, ponieważ nie zaimplementowaliśmy tej możliwości w naszym typie. Aby umożliwić dereferencjonowanie za pomocą operatora `*`,
 implementujemy cechę `Deref`.
 
-### Treating a Type Like a Reference by Implementing the `Deref` Trait
+### Traktowanie typu jak referencji poprzez implementację cechy `Deref`
 
 Jak omówiono w sekcji [„Implementowanie cechy w typie”][impl-trait]<!-- ignore
 --> rozdziału 10, aby zaimplementować cechę, musimy zapewnić
@@ -180,7 +180,7 @@ następnie wywołaniem operatora `*` tylko raz, za każdym razem, gdy używamy `
 Ponieważ podstawienie operatora `*` nie rekuruje w nieskończoność,
 otrzymujemy dane typu `i32`, które pasują do `5` w `assert_eq!` w
 Listingu 15-9.
-### Implicit Deref Coercions with Funkcje and Methods
+### Ukryte wymuszenia deref z funkcją i metodami
 
 *Przymus deref* konwertuje odwołanie do typu, który implementuje cechę `Deref`
 na odwołanie do innego typu. Na przykład przymus deref może konwertować
@@ -252,7 +252,7 @@ Gdy cecha `Deref` jest zdefiniowana dla zaangażowanych typów, Rust przeanalizu
 typy i użyje `Deref::deref` tyle razy, ile będzie to konieczne, aby uzyskać odwołanie,
 które będzie pasowało do typu parametru. Liczba wstawień `Deref::deref` jest ustalana w czasie kompilacji, więc nie ma kary za korzystanie z wymuszenia deref!
 
-### How Deref Coercion Interacts with Mutability
+### Jak przymus Deref oddziałuje ze zmiennością
 
 Podobnie jak używasz cechy `Deref` do nadpisania operatora `*` w
 niezmiennych referencjach, możesz użyć cechy `DerefMut` do nadpisania operatora `*`

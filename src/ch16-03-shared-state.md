@@ -15,7 +15,7 @@ gdzie inteligentne wskaźniki umożliwiły wielokrotne posiadanie, wielokrotne p
 dodawać złożoności, ponieważ tymi różnymi właścicielami trzeba zarządzać. System typów i reguły posiadania Rusta w dużym stopniu pomagają w prawidłowym zarządzaniu. Na przykład przyjrzyjmy się mutexom, jednemu z bardziej powszechnych prymitywów współbieżności
 dla pamięci współdzielonej.
 
-### Using Mutexes to Allow Access to Data from One Thread at a Time
+### Korzystanie z mutexów w celu umożliwienia dostępu do danych z jednego wątku na raz
 
 *Mutex* to skrót od *wzajemnego wykluczenia*, jak w przypadku mutexu, który pozwala
 tylko jednemu wątkowi na dostęp do danych w dowolnym momencie. Aby uzyskać dostęp do danych w
@@ -42,7 +42,7 @@ mówić. Jeśli zarządzanie współdzielonym mikrofonem pójdzie źle, panel ni
 zgodnie z planem!
 
 Zarządzanie mutexami może być niezwykle trudne do prawidłowego wykonania, dlatego tak wiele osób jest entuzjastycznie nastawionych do kanałów. Jednak dzięki systemowi typów i zasadom własności Rust nie można źle blokować i odblokowywać.
-#### The API of `Mutex<T>`
+#### API z `Mutex<T>`
 
 Jako przykład użycia mutexa, zacznijmy od użycia mutexa w kontekście jednowątkowym, jak pokazano na Liście 16-12:
 
@@ -76,7 +76,7 @@ automatycznie.
 
 Po usunięciu blokady możemy wydrukować wartość mutexu i zobaczyć, że udało nam się zmienić wewnętrzny `i32` na 6.
 
-#### Sharing a `Mutex<T>` Between Multiple Threads
+#### Współdzielenie `Mutex<T>` pomiędzy wieloma wątkami
 
 Teraz spróbujmy udostępnić wartość między wieloma wątkami za pomocą `Mutex<T>`.
 Uruchomimy 10 wątków i sprawimy, że każdy z nich zwiększy wartość licznika o 1, tak aby
@@ -114,7 +114,7 @@ Komunikat o błędzie informuje, że wartość `counter` została przeniesiona w
 iteracji pętli. Rust informuje nas, że nie możemy przenieść własności `counter` do wielu wątków. Naprawmy błąd kompilatora za pomocą
 metody multiple-ownership, którą omówiliśmy w rozdziale 15.
 
-#### Multiple Ownership with Multiple Threads
+#### Wielokrotna własność z wieloma wątkami
 
 W rozdziale 15 nadaliśmy wartości wielu właścicieli, używając inteligentnego wskaźnika
 `Rc<T>`, aby utworzyć wartość zliczaną referencyjnie. Zróbmy to samo tutaj i zobaczmy,
@@ -152,7 +152,7 @@ mogą z kolei prowadzić do wycieków pamięci lub utraty wartości, zanim skoń
 z nią. Potrzebujemy typu dokładnie takiego jak `Rc<T>`, ale takiego, który wprowadza zmiany
 w liczbie odniesień w sposób bezpieczny dla wątków.
 
-#### Atomic Reference Counting with `Arc<T>`
+#### Zliczanie odniesień atomowych za pomocą `Arc<T>`
 
 Na szczęście `Arc<T>` *jest* typem podobnym do `Rc<T>`, którego można bezpiecznie używać w
 sytuacjach współbieżnych. *a* oznacza *atomic*, co oznacza, że ​​jest to typ *atomically
@@ -200,7 +200,7 @@ od `Mutex<T>` udostępniane przez moduł [`std::sync::atomic` biblioteki
 standardowej][atomic]<!-- ignore -->. Typy te zapewniają bezpieczny, współbieżny,
 atomowy dostęp do typów pierwotnych. W tym przykładzie zdecydowaliśmy się użyć `Mutex<T>` z typem pierwotnym, abyśmy mogli skupić się na tym, jak działa `Mutex<T>`.
 
-### Similarities Between `RefCell<T>`/`Rc<T>` and `Mutex<T>`/`Arc<T>`
+### Podobieństwa między `RefCell<T>`/`Rc<T>` i `Mutex<T>`/`Arc<T>`
 
 Być może zauważyłeś, że `counter` jest niezmienny, ale możemy uzyskać zmienną
 referencję do wartości wewnątrz niego; oznacza to, że `Mutex<T>` zapewnia wewnętrzną

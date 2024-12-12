@@ -13,7 +13,7 @@ określonych jako ich argument
 Omówimy każdy z nich po kolei, ale najpierw przyjrzyjmy się, dlaczego w ogóle
 potrzebujemy makr, skoro już mamy funkcje.
 
-### The Difference Between Makra and Funkcje
+### Różnica między makro a funkcją
 
 Zasadniczo makra są sposobem pisania kodu, który pisze inny kod, co jest znane jako *metaprogramowanie*. W dodatku C omawiamy atrybut `derive`,
 który generuje dla Ciebie implementację różnych cech.
@@ -39,7 +39,7 @@ ogólnie trudniejsze do odczytania, zrozumienia i utrzymania niż definicje funk
 Inną ważną różnicą między makrami a funkcjami jest to, że musisz
 zdefiniować makra lub umieścić je w zakresie *przed* wywołaniem ich w pliku, w przeciwieństwie do funkcji, które możesz zdefiniować w dowolnym miejscu i wywołać w dowolnym miejscu.
 
-### Declarative Makra with `macro_rules!` for General Metaprogramming
+### Deklaratywna Makra z `macro_rules!` do ogólnego metaprogramowania
 
 Najczęściej używaną formą makr w Rust jest *makro deklaratywne*. Są one czasami nazywane „makrami na przykład”, „makrami `macro_rules!`”
 lub po prostu „makrami”. W swojej istocie makra deklaratywne pozwalają napisać
@@ -139,7 +139,7 @@ generować kod w celu utworzenia wektora zawierającego określone elementy.
 Aby dowiedzieć się więcej o tym, jak pisać makra, zapoznaj się z dokumentacją online lub
 innymi zasobami, takimi jak [„Mała księga Rust Makra”][tlborm] rozpoczęty przez
 Daniela Keepa i kontynuowany przez Lukasa Wirtha.
-### Procedural Makra for Generating Code from Attributes
+### Proceduralna Makra do generowania kodu z atrybutów
 
 Drugą formą makr jest *makro proceduralne*, które działa bardziej jak
 funkcja (i jest typem procedury). Makra proceduralne akceptują pewien kod jako
@@ -178,7 +178,7 @@ Przyjrzyjmy się różnym rodzajom makr proceduralnych. Zaczniemy od
 niestandardowego makra pochodnego, a następnie wyjaśnimy niewielkie różnice, które sprawiają, że
 inne formy są różne.
 
-### How to Write a Custom `derive` Macro
+### Jak napisać niestandardową makroinstrukcję `deriv`
 
 Utwórzmy skrzynię o nazwie `hello_macro`, która definiuje cechę o nazwie
 `HelloMacro` z jedną skojarzoną funkcją o nazwie `hello_macro`. Zamiast
@@ -405,7 +405,7 @@ powinien on wydrukować `Hello, Macro! Nazywam się Pancakes!` Implementacja cec
 Następnie przyjrzyjmy się, w jaki sposób inne rodzaje makr proceduralnych różnią się od niestandardowych
 makr pochodnych.
 
-### Attribute-like macros
+### Makra podobne do atrybutów
 
 Makra podobne do atrybutów są podobne do niestandardowych makr pochodnych, ale zamiast
 generować kod dla atrybutu `derive`, pozwalają na tworzenie nowych
@@ -434,7 +434,7 @@ treści funkcji.
 Poza tym makra podobne do atrybutów działają tak samo jak niestandardowe makra pochodne: tworzysz skrzynkę z typem skrzynki `proc-macro` i implementujesz
 funkcję, która generuje żądany kod!
 
-### Function-like macros
+### Makra podobne do funkcji
 
 Makra podobne do funkcji definiują makra, które wyglądają jak wywołania funkcji. Podobnie jak makra
 `macro_rules!`, są bardziej elastyczne niż funkcje; na przykład
@@ -462,7 +462,7 @@ Ta definicja jest podobna do podpisu niestandardowego makra derive: otrzymujemy
 tokeny znajdujące się w nawiasach i zwracamy kod, który chcieliśmy
 wygenerować.
 
-## Summary
+## Streszczenie
 
 Uff! Teraz masz w swoim zestawie narzędzi kilka funkcji Rust, których prawdopodobnie nie będziesz używać
 często, ale będziesz wiedział, że są dostępne w bardzo szczególnych okolicznościach.

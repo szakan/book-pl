@@ -17,7 +17,7 @@ odpowiedzi. Technicznie rzecz biorąc, możliwe jest używanie HTTP z innymi pro
 większości przypadków HTTP wysyła swoje dane przez TCP. Będziemy pracować z
 surowymi bajtami żądań i odpowiedzi TCP i HTTP.
 
-### Listening to the TCP Connection
+### Słuchanie połączenia TCP
 
 Nasz serwer WWW musi nasłuchiwać połączenia TCP, więc to jest pierwsza część, nad którą będziemy pracować. Standardowa biblioteka oferuje moduł `std::net`, który nam to umożliwia. Stwórzmy nowy projekt w zwykły sposób:
 
@@ -103,7 +103,7 @@ zakończysz uruchamianie określonej wersji kodu. Następnie uruchom ponownie pr
 wywołując polecenie `cargo run` po wprowadzeniu każdego zestawu zmian w kodzie,
 aby upewnić się, że uruchamiasz najnowszy kod.
 
-### Reading the Request
+### Odczytanie prośby
 
 Zaimplementujmy funkcjonalność odczytu żądania z przeglądarki! Aby
 oddzielić kwestie związane z pierwszym uzyskaniem połączenia, a następnie podjęciem działań
@@ -182,7 +182,7 @@ od naszego programu.
 Przeanalizujmy te dane żądania, aby zrozumieć, czego przeglądarka żąda od
 naszego programu.
 
-### A Closer Look at an HTTP Request
+### Bliższe spojrzenie na żądanie HTTP
 
 HTTP jest protokołem tekstowym, a żądanie przyjmuje następujący format:
 
@@ -222,7 +222,7 @@ adres, taki jak *127.0.0.1:7878/test*, aby zobaczyć, jak zmieniają się dane �
 
 Teraz, gdy wiemy, o co prosi przeglądarka, możemy wysłać jej jakieś dane!
 
-### Writing a Response
+### Pisanie odpowiedzi
 
 Zamierzamy wdrożyć wysyłanie danych w odpowiedzi na żądanie klienta.
 Odpowiedzi mają następujący format:
@@ -271,7 +271,7 @@ Dzięki tym zmianom uruchommy nasz kod i złóżmy żądanie. Nie drukujemy już
 wyjściem z Cargo. Gdy ładujesz *127.0.0.1:7878* w przeglądarce internetowej, powinieneś
 otrzymać pustą stronę zamiast błędu. Właśnie ręcznie zakodowałeś otrzymanie żądania HTTP i wysłanie odpowiedzi!
 
-### Returning Real HTML
+### Zwracanie prawdziwego HTML
 
 Zaimplementujmy funkcjonalność zwracania czegoś więcej niż pustej strony. Utwórz
 nowy plik *hello.html* w katalogu głównym swojego projektu, a nie w katalogu
@@ -318,7 +318,7 @@ nie robi tego, co robi większość serwerów internetowych. Chcemy dostosować 
 w zależności od żądania i odesłać plik HTML tylko dla poprawnie sformatowanego
 żądania do */*.
 
-### Validating the Request and Selectively Responding
+### Walidacja żądania i selektywne odpowiadanie
 
 Teraz nasz serwer internetowy zwróci kod HTML w pliku niezależnie od tego, czego zażądał
 klient. Dodajmy funkcjonalność sprawdzającą, czy przeglądarka
@@ -384,7 +384,7 @@ Po wprowadzeniu tych zmian uruchom ponownie swój serwer. Żądanie *127.0.0.1:7
 zwrócić zawartość *hello.html*, a każde inne żądanie, takie jak
 *127.0.0.1:7878/foo*, powinno zwrócić kod HTML błędu z *404.html*.
 
-### A Touch of Refactoring
+### Odrobina refaktoryzacji
 
 W tej chwili bloki `if` i `else` mają wiele powtórzeń: oba
 odczytują pliki i zapisują ich zawartość do strumienia. Jedyne

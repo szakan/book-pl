@@ -83,7 +83,7 @@ kod, zobaczymy następujące dane wyjściowe z makra `panic!`:
 
 Jak zwykle, wynik ten dokładnie mówi nam, co poszło nie tak.
 
-### Matching on Different Errors
+### Dopasowywanie różnych błędów
 
 Kod w Listingu 9-4 będzie `panic!`  niezależnie od przyczyny `File::open`.
 Chcemy jednak podjąć różne działania w przypadku różnych przyczyn niepowodzenia: jeśli
@@ -118,7 +118,7 @@ również może się nie powieść, potrzebujemy drugiego ramienia w wewnętrzny
 plik nie może zostać utworzony, drukowany jest inny komunikat o błędzie. Drugie ramię
 zewnętrznego `match` pozostaje takie samo, więc program panikuje przy każdym błędzie oprócz błędu braku pliku.
 
-> ### Alternatives to Using `match` with `Result<T, E>`
+> ### Alternatywy dla używania `match` z `Result<T, E>`
 >
 > To sporo `match`! Wyrażenie `match` jest bardzo przydatne, ale też bardzo
 > prymitywne. W rozdziale 13 dowiesz się o zamknięciach, które są używane
@@ -153,7 +153,7 @@ zewnętrznego `match` pozostaje takie samo, więc program panikuje przy każdym 
 > dokumentacji biblioteki standardowej. Wiele innych takich metod może oczyścić ogromne
 > zagnieżdżone wyrażenia `match`, gdy masz do czynienia z błędami.
 
-### Shortcuts for Panic on Error: `unwrap` and `expect`
+### Skróty dla Panic on Error: `unwrap` i `expect`
 
 Używanie `match` działa wystarczająco dobrze, ale może być trochę rozwlekłe i nie zawsze dobrze komunikuje intencję. Typ `Result<T, E>` ma wiele metod pomocniczych,
 zdefiniowanych w celu wykonywania różnych, bardziej szczegółowych zadań. Metoda `unwrap` jest
@@ -215,7 +215,7 @@ W kodzie o jakości produkcyjnej większość Rustaceanów wybiera `expect` zami
 udawać. W ten sposób, jeśli twoje założenia okażą się błędne, będziesz mieć więcej
 informacji do wykorzystania w debugowaniu.
 
-### Propagating Errors
+### Propagowanie błędów
 
 Gdy implementacja funkcji wywołuje coś, co może się nie powieść, zamiast
 obsługiwać błąd w samej funkcji, możesz zwrócić błąd do
@@ -289,7 +289,7 @@ obsłużył je odpowiednio.
 Ten wzór propagacji błędów jest tak powszechny w Rust, że Rust udostępnia
 operator znaku zapytania `?`, aby to ułatwić.
 
-#### A Shortcut for Propagating Errors: the `?` Operator
+#### Skrót do propagowania błędów: operator `?`
 
 Listing 9-7 shows an implementation of `read_username_from_file` that has the
 same functionality as in Listing 9-6, but this implementation uses the
@@ -379,7 +379,7 @@ w tym `String` i zwraca go. Oczywiście, użycie `fs::read_to_string`
 nie daje nam możliwości wyjaśnienia całej obsługi błędów, więc najpierw zrobiliśmy to
 dłuższą drogą.
 
-#### Where The `?` Operator Can Be Used
+#### Gdzie można użyć operatora `?`
 
 Operatora `?` można używać tylko w funkcjach, których typ zwracany jest zgodny
 z wartością, dla której użyto `?`. Dzieje się tak, ponieważ operator `?` jest zdefiniowany

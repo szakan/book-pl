@@ -222,17 +222,17 @@ Here’s what the output of this example looks like:
 {{#include ../listings/ch05-using-structs-to-structure-related-data/no-listing-05-dbg-macro/output.txt}}
 ```
 
-We can see the first bit of output came from *src/main.rs* line 10 where we’re
-debugging the expression `30 * scale`, and its resultant value is `60` (the
-`Debug` formatting implemented for integers is to print only their value). The
-`dbg!` call on line 14 of *src/main.rs* outputs the value of `&rect1`, which is
-the `Rectangle` struct. This output uses the pretty `Debug` formatting of the
-`Rectangle` type. The `dbg!` macro can be really helpful when you’re trying to
-figure out what your code is doing!
+Możemy zobaczyć, że pierwszy bit danych wyjściowych pochodzi z wiersza 10 pliku *src/main.rs*, gdzie
+debugujemy wyrażenie `30 * scale`, a jego wynikowa wartość to `60` (formatowanie
+`Debug` zaimplementowane dla liczb całkowitych polega na drukowaniu tylko ich wartości). Wywołanie
+`dbg!` w wierszu 14 pliku *src/main.rs* wyprowadza wartość `&rect1`, która jest
+strukturą `Rectangle`. Ten wynik wykorzystuje ładne formatowanie `Debug` typu
+`Rectangle`. Makro `dbg!` może być naprawdę pomocne, gdy próbujesz
+rozgryźć, co robi twój kod!
 
 Oprócz cechy `Debug`, Rust dostarcza cały szereg innych cech, które możemy nadać za pomocą atrybutu `derive`, by wzbogacić nasze typy o dodatkową funkcjonalność.
 Te cechy i ich zachowania opisane są w [Załączniku C][app-c]<!-- ignore -->. Jak dodawać takim cechom własne implementacje oraz także jak tworzyć własne cechy omówimy w rozdziale 10.
-There are also many attributes other than `derive`; for more information, see [the „Attributes” section of the Rust Reference][attributes].
+There are also many attributes other than `derive`; for more information, see [sekcja „Atrybuty” w podręczniku Rust Reference][attributes].
 
 Nasza funkcja `area` jest dość specyficzna: oblicza pola jedynie prostokątów.
 Skoro i tak nie zadziała ona z żadnym innym typem, przydatne 

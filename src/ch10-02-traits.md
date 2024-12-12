@@ -8,7 +8,7 @@ określone zachowanie.
 > Uwaga: Cechy są podobne do funkcji często nazywanej *interfejsami* w innych
 > językach, chociaż z pewnymi różnicami.
 
-### Defining a Trait
+### Definiowanie cechy
 
 Zachowanie typu składa się z metod, które możemy wywołać w tym typie. Różne
 typy mają takie samo zachowanie, jeśli możemy wywołać te same metody we wszystkich tych
@@ -48,7 +48,7 @@ zdefiniowaną dokładnie z tą sygnaturą.
 Cecha może mieć wiele metod w swojej treści: sygnatury metod są wymienione
 po jednej w każdym wierszu, a każdy wiersz kończy się średnikiem.
 
-### Implementing a Trait on a Type
+### Implementacja cechy w typie
 
 Teraz, gdy zdefiniowaliśmy pożądane sygnatury metod cechy `Summary`,
 możemy zaimplementować je w typach w naszym agregatorze mediów. Listing 10-13 pokazuje
@@ -103,7 +103,7 @@ zniszczyć Twojego kodu i odwrotnie. Bez tej reguły dwie skrzynie mogłyby zaim
 tę samą cechę dla tego samego typu, a Rust nie wiedziałby, której implementacji
 użyć.
 
-### Default Implementations
+### Domyślne implementacje
 
 Czasami przydatne jest posiadanie domyślnego zachowania dla niektórych lub wszystkich metod
 w cesze zamiast wymagania implementacji dla wszystkich metod w każdym typie.
@@ -170,7 +170,7 @@ Ten kod drukuje `1 nowy tweet: (Przeczytaj więcej od @horse_ebooks...)`.
 Należy pamiętać, że nie można wywołać domyślnej implementacji z
 nadrzędnej implementacji tej samej metody.
 
-### Traits as Parameters
+### Cechy jako parametry
 
 Teraz, gdy wiesz, jak definiować i implementować cechy, możemy zbadać, jak używać
 cech do definiowania funkcji akceptujących wiele różnych typów. Użyjemy cechy
@@ -192,7 +192,7 @@ ponieważ te typy nie implementują `Summary`.
 <!-- Old headings. Do not remove or links may break. -->
 <a id="fixing-the-largest-function-with-trait-bounds"></a>
 
-#### Trait Bound Syntax
+#### Składnia związana z cechami
 
 Składnia `impl Trait` działa w prostych przypadkach, ale w rzeczywistości jest składnią
 sugar dla dłuższej formy znanej jako *trait bound*; wygląda ona następująco:
@@ -226,7 +226,7 @@ Typ ogólny `T` określony jako typ parametrów `item1` i `item2`
 ogranicza funkcję tak, że konkretny typ wartości
 przekazanej jako argument dla `item1` i `item2` musi być taki sam.
 
-#### Specifying Multiple Trait Bounds with the `+` Syntax
+#### Określanie wielu granic cech za pomocą składni `+`
 
 Możemy również określić więcej niż jedno ograniczenie cechy. Powiedzmy, że chcemy, aby `notify` używało
 formatowania wyświetlania, jak również `summarize` w `item`: określamy w definicji `notify`, że `item` musi implementować zarówno `Display`, jak i `Summary`. Możemy to zrobić,
@@ -245,7 +245,7 @@ pub fn notify<T: Summary + Display>(item: &T) {
 With the two trait bounds specified, the body of `notify` can call `summarize`
 and use `{}` to format `item`.
 
-#### Clearer Trait Bounds with `where` Clauses
+#### Bardziej przejrzyste granice cech z klauzulami `where`
 
 Używanie zbyt wielu ograniczeń cech ma swoje wady. Każdy rodzaj ma własne ograniczenia cech, więc funkcje z wieloma parametrami typu rodzajowego mogą zawierać wiele informacji o ograniczeniach cech między nazwą funkcji a listą jej parametrów, co utrudnia odczytanie sygnatury funkcji. Z tego powodu Rust ma alternatywną składnię do określania ograniczeń cech wewnątrz klauzuli `where` po sygnaturze funkcji. Zamiast więc pisać to:
 
@@ -261,7 +261,7 @@ we can use a `where` clause, like this:
 
 Sygnatura tej funkcji jest mniej zaśmiecona: nazwa funkcji, lista parametrów i typ zwracany znajdują się blisko siebie, podobnie jak w przypadku funkcji bez wielu ograniczeń cech.
 
-### Returning Types That Implement Traits
+### Zwracanie typów implementujących cechy
 
 Możemy również użyć składni `impl Trait` w pozycji return, aby zwrócić wartość pewnego typu, która implementuje cechę, jak pokazano tutaj:
 
@@ -294,7 +294,7 @@ pozwalają na wartości różnych
 Types”][using-trait-objects-that-allow-for-values-of-different-types]<!--
 ignore --> section of Chapter 18.
 
-### Using Trait Bounds to Conditionally Implement Methods
+### Wykorzystanie ograniczeń cech do warunkowej implementacji metod
 
 Używając cechy powiązanej z blokiem `impl`, który używa parametrów typu generycznego,
 możemy warunkowo implementować metody dla typów, które implementują określone

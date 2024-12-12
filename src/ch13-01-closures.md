@@ -1,7 +1,7 @@
 <!-- Stary nagłówek. Nie usuwaj, bo linki mogą się zepsuć. -->
 <a id="closures-anonymous-functions-that-can-capture-their-environment"></a>
 
-## Closures: Anonymous Funkcje that Capture Their Environment
+## Zamknięcia: Anonimowe funkcje, które rejestrują swoje otoczenie
 
 Zamknięcia Rusta to anonimowe funkcje, które można zapisać w zmiennej lub przekazać jako
 argumenty do innych funkcji. Można utworzyć zamknięcie w jednym miejscu, a następnie
@@ -15,7 +15,7 @@ zachowania.
 <a id="refactoring-using-functions"></a>
 <a id="refactoring-with-closures-to-store-code"></a>
 
-### Capturing the Environment with Closures
+### Przechwytywanie środowiska za pomocą zamknięć
 
 Najpierw sprawdzimy, jak możemy użyć zamknięć, aby przechwycić wartości ze
 środowiska, w którym są zdefiniowane, w celu późniejszego wykorzystania. Oto scenariusz: Co jakiś czas nasza firma produkująca koszulki rozdaje ekskluzywną koszulkę w limitowanej edycji
@@ -76,7 +76,7 @@ niezmienną referencję do instancji `self` `Inventory` i przekazuje ją z
 kodem, który określiliśmy do metody `unwrap_or_else`. Funkcje z drugiej strony
 nie są w stanie przechwycić swojego otoczenia w ten sposób.
 
-### Closure Type Inference and Annotation
+### Wnioskowanie i adnotacja typu zamknięcia
 
 Istnieje więcej różnic między funkcjami i zamknięciami. Zamknięcia nie
 zwykle wymagają adnotacji typów parametrów lub wartości zwracanej,
@@ -158,7 +158,7 @@ Gdy po raz pierwszy wywołujemy `example_closure` z wartością `String`, kompil
 wnioskuje, że typ `x` i typ zwracany zamknięcia to `String`. Te
 typy są następnie blokowane w zamknięciu w `example_closure` i otrzymujemy błąd typu, gdy następnym razem próbujemy użyć innego typu z tym samym zamknięciem.
 
-### Capturing References or Moving Ownership
+### Rejestrowanie odniesień lub przenoszenie własności
 
 Zamknięcia mogą przechwytywać wartości ze swojego otoczenia na trzy sposoby, które
 bezpośrednio odwzorowują trzy sposoby, w jakie funkcja może przyjąć parametr: pożyczanie
@@ -248,7 +248,7 @@ w wątku głównym po zdefiniowaniu zamknięcia, aby zobaczyć, jakie błędy ko
 <a id="limitations-of-the-cacher-implementation"></a>
 <a id="moving-captured-values-out-of-the-closure-and-the-fn-traits"></a>
 
-### Moving Captured Values Out of Closures and the `Fn` Traits
+### Przenoszenie przechwyconych wartości poza zamknięcia i cechy `Fn`
 
 Gdy zamknięcie przechwyci odniesienie lub przejmie własność wartości ze
 środowiska, w którym zamknięcie jest zdefiniowane (wpływając w ten sposób na to, co, jeśli cokolwiek,

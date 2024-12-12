@@ -37,7 +37,7 @@ web scraper. Przekażemy dwa adresy URL z wiersza poleceń, pobierzemy oba
 jednocześnie i zwrócimy wynik tego, który zakończy się jako pierwszy. Ten
 przykład będzie miał sporo nowej składni, ale nie martw się. Wyjaśnimy
 wszystko, co musisz wiedzieć, w trakcie.
-### Our First Async Program
+### Nasz pierwszy program asynchroniczny
 
 Aby ten rozdział skupiał się na nauce asynchroniczności, a nie na żonglowaniu częściami
 ekosystemu, stworzyliśmy skrzynię `trpl` (`trpl` to skrót od „Języka programowania Rust”). Ponownie eksportuje ona wszystkie typy, cechy i funkcje,

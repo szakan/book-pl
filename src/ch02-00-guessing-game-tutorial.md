@@ -801,13 +801,12 @@ Rozdział 4 odkrywa system własności, mechanizm który wyróżnia Rusta spośr
 Rozdział 5 omawia składnię struktur i metod, a rozdział 6 wyjaśnia, jak działają typy numeryczne.
 
 
-This project was a hands-on way to introduce you to many new Rust concepts:
-`let`, `match`, functions, the use of external crates, and more. In the next
-few chapters, you’ll learn about these concepts in more detail. Chapter 3
-covers concepts that most programming languages have, such as variables, data
-types, and functions, and shows how to use them in Rust. Chapter 4 explores
-ownership, a feature that makes Rust different from other languages. Chapter 5
-discusses structs and method syntax, and Chapter 6 explains how enums work.
+Ten projekt był praktycznym sposobem na zapoznanie Cię z wieloma nowymi koncepcjami Rust:
+`let`, `match`, funkcjami, wykorzystaniem zewnętrznych skrzynek i wieloma innymi. W następnych
+rozdziałach poznasz te koncepcje bardziej szczegółowo. Rozdział 3
+obejmuje koncepcje, które występują w większości języków programowania, takie jak zmienne, typy danych i funkcje, i pokazuje, jak ich używać w Rust. Rozdział 4 omawia
+własność, cechę, która odróżnia Rust od innych języków. Rozdział 5
+omawia struktury i składnię metod, a rozdział 6 wyjaśnia, jak działają wyliczenia.
 
 [prelude]: ../std/prelude/index.html
 [variables-and-mutability]: ch03-01-variables-and-mutability.html#zmienne-i-ich-modyfikowalność

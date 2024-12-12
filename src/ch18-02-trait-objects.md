@@ -1,4 +1,4 @@
-## Using Trait Objects That Allow for Values of Different Types
+## Korzystanie z obiektów cech, które dopuszczają wartości różnych typów
 
 W rozdziale 8 wspomnieliśmy, że jednym z ograniczeń wektorów jest to, że mogą one
 przechowywać elementy tylko jednego typu. Stworzyliśmy obejście w Liście 8-9, gdzie
@@ -35,7 +35,7 @@ były instancjami `Component` i wywoływać na nich `draw`. Ale ponieważ Rust
 nie ma dziedziczenia, potrzebujemy innego sposobu na ustrukturyzowanie biblioteki `gui`, aby
 umożliwić użytkownikom rozszerzanie jej o nowe typy.
 
-### Defining a Trait for Common Behavior
+### Definiowanie cechy dla typowego zachowania
 
 Aby zaimplementować zachowanie, jakie chcemy, aby miało `gui`, zdefiniujemy cechę o nazwie
 `Draw`, która będzie miała jedną metodę o nazwie `draw`. Następnie możemy zdefiniować wektor, który
@@ -119,7 +119,7 @@ może zawierać `Vec<T>`, która zawiera `Box<Button>`, a także
 `Box<TextField>`. Przyjrzyjmy się, jak to działa, a następnie omówimy
 implikacje wydajnościowe w czasie wykonywania.
 
-### Implementing the Trait
+### Wdrażanie cechy
 
 Teraz dodamy kilka typów, które implementują cechę `Draw`. Dostarczymy typ
 `Button`. Ponownie, implementacja biblioteki GUI wykracza poza zakres
@@ -212,7 +212,7 @@ This error lets us know that either we’re passing something to `Screen` we
 didn’t mean to pass and so should pass a different type or we should implement
 `Draw` on `String` so that `Screen` is able to call `draw` on it.
 
-### Trait Objects Perform Dynamic Dispatch
+### Obiekty cech wykonują dynamiczną dyspozytornię
 
 Przypomnij sobie w sekcji [„Wydajność kodu przy użyciu
 generyków”][performance-of-code-using-generics]<!-- ignoruj ​​--> w

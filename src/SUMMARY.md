@@ -1,6 +1,6 @@
-# The Rust Programming Language
+# Język programowania Rust
 
-[The Rust Programming Language](title-page.md)
+[Język programowania Rust](title-page.md)
 [Foreword](foreword.md)
 [Introduction](ch00-00-introduction.md)
 
@@ -77,7 +77,7 @@
 - [Cechy języka funkcyjnego: iteratory i zamknięcia](ch13-00-functional-features.md)
     - [Closures: Anonymous Funkcje that Capture Their Environment](ch13-01-closures.md)
     - [Przetwarzanie serii elementów za pomocą iteratorów](ch13-02-iterators.md)
-    - [Improving Our I/O Project](ch13-03-improving-our-io-project.md)
+    - [Ulepszanie naszego projektu I/O](ch13-03-improving-our-io-project.md)
     - [Porównanie wydajności: pętle kontra iteratory](ch13-04-performance.md)
 
 - [Więcej o Cargo i Crates.io](ch14-00-more-about-cargo.md)
@@ -106,12 +106,12 @@
     - [Współbieżność z asynchronicznością](ch17-02-concurrency-with-async.md)
     - [Praca z dowolną liczbą przyszłości](ch17-03-more-futures.md)
     - [Strumienie](ch17-04-streams.md)
-    - [Digging Into the Traits for Async](ch17-05-traits-for-async.md)
-    - [Futures, Tasks, and Threads](ch17-06-futures-tasks-threads.md)
+    - [Zagłębianie się w cechy asynchroniczne](ch17-05-traits-for-async.md)
+    - [Przyszłości, zadania i wątki](ch17-06-futures-tasks-threads.md)
 
 - [Funkcje programowania obiektowego Rust](ch18-00-oop.md)
     - [Charakterystyka języków obiektowych](ch18-01-what-is-oo.md)
-    - [Using Trait Objects That Allow for Values of Different Types](ch18-02-trait-objects.md)
+    - [Korzystanie z obiektów cech, które dopuszczają wartości różnych typów](ch18-02-trait-objects.md)
     - [Implementacja wzorca projektowego obiektowego](ch18-03-oo-design-patterns.md)
 
 ## Advanced Topics
@@ -125,7 +125,7 @@
     - [Niebezpieczny Rust](ch20-01-unsafe-rust.md)
     - [Zaawansowane cechy](ch20-03-advanced-traits.md)
     - [Zaawansowane typy](ch20-04-advanced-types.md)
-    - [Advanced Funkcje and Closures](ch20-05-advanced-functions-and-closures.md)
+    - [Zaawansowane funkcje i zamknięcia](ch20-05-advanced-functions-and-closures.md)
     - [Makra](ch20-06-macros.md)
 
 - [Projekt końcowy: Budowa wielowątkowego serwera WWW](ch21-00-final-project-a-web-server.md)

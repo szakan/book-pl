@@ -69,7 +69,7 @@ odpowiedzi na metody wywoływane przez użytkowników naszej biblioteki na insta
 ale nie muszą oni bezpośrednio zarządzać zmianami stanu. Ponadto użytkownicy nie mogą
 popełnić błędu w stanach, np. opublikować posta przed jego recenzją.
 
-### Defining `Post` and Creating a New Instance in the Draft State
+### Definiowanie `Post` i tworzenie nowej instancji w stanie roboczym
 
 Zacznijmy implementację biblioteki! Wiemy, że potrzebujemy
 publicznej struktury `Post`, która zawiera pewną treść, więc zaczniemy od
@@ -100,7 +100,7 @@ jako szkic. Ponieważ pole `state` `Post` jest prywatne, nie ma możliwości
 utworzenia `Post` w żadnym innym stanie! W funkcji `Post::new` ustawiamy pole
 `content` na nowy, pusty `String`.
 
-### Storing the Text of the Post Content
+### Przechowywanie tekstu zawartości posta
 
 Widzieliśmy w Liście 18-11, że chcemy móc wywołać metodę o nazwie
 `add_text` i przekazać jej `&str`, która jest następnie dodawana jako treść tekstowa
@@ -124,7 +124,7 @@ więc nie jest częścią wzorca stanu. Metoda `add_text` w ogóle nie wchodzi w
 z polem `state`, ale jest częścią zachowania, które chcemy
 obsługiwać.
 
-### Ensuring the Content of a Draft Post Is Empty
+### Upewnienie się, że zawartość wersji roboczej posta jest pusta
 
 Nawet po wywołaniu `add_text` i dodaniu treści do naszego wpisu, nadal
 chcemy, aby metoda `content` zwracała pusty fragment ciągu, ponieważ wpis
@@ -145,7 +145,7 @@ pusta. Listing 18-14 pokazuje tę implementację zastępczą:
 
 Dzięki tej dodanej metodzie `content` wszystko w Liście 18-11 aż do wiersza 7 działa zgodnie z przeznaczeniem.
 
-### Requesting a Review of the Post Changes Its State
+### Prośba o przegląd postu zmienia jego stan
 
 Next, we need to add functionality to request a review of a post, which should
 change its state from `Draft` to `PendingReview`. Listing 18-15 shows this code:
@@ -203,7 +203,7 @@ Listing 18-11 działa teraz do wiersza 10!
 <!-- Old headings. Do not remove or links may break. -->
 <a id="adding-the-approve-method-that-changes-the-behavior-of-content"></a>
 
-### Adding `approve` to Change the Behavior of `content`
+### Dodanie `approve` w celu zmiany zachowania `content`
 
 Metoda `approve` będzie podobna do metody `request_review`: ustawi `state` na wartość, którą bieżący stan określa jako odpowiednią, gdy ten stan zostanie zatwierdzony, jak pokazano na Liście 18-16:
 
@@ -292,7 +292,7 @@ regułami znajduje się w obiektach stanu, a nie jest rozproszona w całym `Post
 > wyrażenia `match` lub podobnego, aby obsłużyć każdy możliwy wariant. To może być
 > bardziej powtarzalne niż to rozwiązanie z obiektem cechy.
 
-### Trade-offs of the State Pattern
+### Kompromisy wzorca stanu
 
 Pokazaliśmy, że Rust jest w stanie zaimplementować obiektowo zorientowany wzorzec stanu
 w celu hermetyzacji różnych rodzajów zachowań, jakie post powinien mieć w
@@ -349,7 +349,7 @@ zorientowanych obiektowo, nie wykorzystujemy w pełni zalet Rusta, jak moglibyś
 Przyjrzyjmy się niektórym zmianom, które możemy wprowadzić w skrzynce `blog`, które mogą powodować
 nieprawidłowe stany i przejścia do błędów kompilacji.
 
-#### Encoding States and Behavior as Types
+#### Kodowanie stanów i zachowań jako typów
 
 We’ll show you how to rethink the state pattern to get a different set of
 trade-offs. Rather than encapsulating the states and transitions completely so
@@ -400,7 +400,7 @@ Struktura `DraftPost` ma metodę `add_text`, więc możemy dodawać tekst do
 postów nie mają swojej zawartości dostępnej do wyświetlenia. Każda próba obejścia
 tych ograniczeń spowoduje błąd kompilatora.
 
-#### Implementing Transitions as Transformations into Different Types
+#### Wdrażanie przejść jako transformacji do różnych typów
 
 Jak więc uzyskać opublikowany post? Chcemy wymusić regułę, że szkic posta musi zostać sprawdzony i zatwierdzony przed opublikowaniem. Post w stanie
 oczekującym na sprawdzenie nadal nie powinien wyświetlać żadnej treści. Zaimplementujmy

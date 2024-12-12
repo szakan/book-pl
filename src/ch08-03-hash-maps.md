@@ -14,7 +14,7 @@ W tej sekcji omówimy podstawowe API map skrótów, ale wiele innych smaczków
 ukrywa się w funkcjach zdefiniowanych w `HashMap<K, V>` przez bibliotekę standardową.
 Jak zawsze, sprawdź dokumentację biblioteki standardowej, aby uzyskać więcej informacji.
 
-### Creating a New Hash Map
+### Tworzenie nowej mapy skrótów
 
 Jednym ze sposobów utworzenia pustej mapy haszującej jest użycie `new` i dodanie elementów za pomocą
 `insert`. W Liście 8-20 śledzimy wyniki dwóch drużyn, których nazwy to *Blue* i *Yellow*. Drużyna Blue zaczyna z 10 punktami, a
@@ -38,7 +38,7 @@ klucze typu `String` i wartości typu `i32`. Podobnie jak wektory, mapy skrótó
 jednorodne: wszystkie klucze muszą mieć ten sam typ, a wszystkie wartości
 muszą mieć ten sam typ.
 
-### Accessing Values in a Hash Map
+### Uzyskiwanie dostępu do wartości w mapie skrótów
 
 Możemy uzyskać wartość z mapy skrótów, podając jej klucz metodzie `get`, jak pokazano na Liście 8-21.
 
@@ -61,14 +61,14 @@ Możemy iterować po każdej parze klucz-wartość w mapie skrótów w podobny s
 {{#rustdoc_include ../listings/ch08-common-collections/no-listing-03-iterate-over-hashmap/src/main.rs:here}}
 ```
 
-This code will print each pair in an arbitrary order:
+Ten kod wydrukuje każdą parę w dowolnej kolejności:
 
 ```text
 Yellow: 50
 Blue: 10
 ```
 
-### Hash Maps and Ownership
+### Mapy skrótów i własność
 
 W przypadku typów implementujących cechę `Copy`, takich jak `i32`, wartości są kopiowane
 do mapy skrótów. W przypadku posiadanych wartości, takich jak `String`, wartości zostaną przeniesione, a
@@ -90,7 +90,7 @@ przynajmniej tak długo, jak długo mapa skrótów jest prawidłowa. Więcej na 
 [“Validating References with
 Lifetimes”][validating-references-with-lifetimes]<!-- ignore --> w
 rozdziale 10.
-### Updating a Hash Map
+### Aktualizowanie mapy skrótów
 
 Chociaż liczba par klucz-wartość może się zwiększać, każdy unikatowy klucz może mieć
 tylko jedną wartość skojarzoną z nim na raz (ale nie odwrotnie: na przykład zarówno drużyna Niebieskich, jak i Żółtych mogą mieć wartość `10`
@@ -103,7 +103,7 @@ zachować starą wartość i zignorować nową wartość, dodając nową wartoś
 klucz *nie* ma już wartości. Możesz też połączyć starą wartość i
 nową wartość. Przyjrzyjmy się, jak wykonać każdą z tych czynności!
 
-#### Overwriting a Value
+#### Nadpisywanie wartości
 
 Jeśli wstawimy klucz i wartość do mapy skrótów, a następnie wstawimy ten sam klucz
 z inną wartością, wartość powiązana z tym kluczem zostanie zastąpiona.
@@ -124,7 +124,7 @@ overwritten.
 <!-- Old headings. Do not remove or links may break. -->
 <a id="only-inserting-a-value-if-the-key-has-no-value"></a>
 
-#### Adding a Key and Value Only If a Key Isn’t Present
+#### Dodawanie klucza i wartości tylko wtedy, gdy klucz nie jest obecny
 
 Często sprawdza się, czy konkretny klucz już istnieje w mapie skrótów
 z wartością, a następnie podejmuje się następujące działania: jeśli klucz istnieje w
@@ -155,7 +155,7 @@ Pierwsze wywołanie `entry` wstawi klucz dla żółtego zespołu o wartości
 `entry` nie zmieni mapy skrótów, ponieważ niebieski zespół ma już wartość
 `10`.
 
-#### Updating a Value Based on the Old Value
+#### Aktualizowanie wartości na podstawie starej wartości
 
 Innym powszechnym przypadkiem użycia map haszujących jest wyszukiwanie wartości klucza, a następnie
 aktualizowanie jej na podstawie starej wartości. Na przykład, Listing 8-25 pokazuje kod, który
@@ -202,7 +202,7 @@ typowych algorytmów haszujących.
 
 [^siphash]: [https://en.wikipedia.org/wiki/SipHash](https://en.wikipedia.org/wiki/SipHash)
 
-## Summary
+## Streszczenie
 Wektory, ciągi znaków i mapy skrótów zapewnią dużą ilość funkcji,
 niezbędnych w programach, gdy trzeba przechowywać, uzyskiwać dostęp i modyfikować dane. Oto
 kilka ćwiczeń, które powinieneś być teraz w stanie rozwiązać:

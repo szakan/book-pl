@@ -97,11 +97,10 @@ Otrzymamy następujący błąd:
 {{#include ../listings/ch04-understanding-ownership/no-listing-10-multiple-mut-not-allowed/output.txt}}
 ```
 
-This error says that this code is invalid because we cannot borrow `s` as
-mutable more than once at a time. The first mutable borrow is in `r1` and must
-last until it’s used in the `println!`, but between the creation of that
-mutable reference and its usage, we tried to create another mutable reference
-in `r2` that borrows the same data as `r1`.
+Ten błąd mówi, że ten kod jest nieprawidłowy, ponieważ nie możemy pożyczyć `s` jako
+zmiennego więcej niż raz na raz. Pierwsze zmienne pożyczenie znajduje się w `r1` i musi trwać, dopóki nie zostanie użyte w `println!`, ale między utworzeniem tego
+zmiennego odniesienia a jego użyciem próbowaliśmy utworzyć inne zmienne odniesienie
+w `r2`, które pożycza te same dane co `r1`.
 
 To ograniczenie pozwala na mutowalność jedynie w bardzo kontrolowany sposób.
 Może ono być kłopotliwe dla początkujących rustowców, gdyż większość innych języków nie nakłada podobnych ograniczeń.
@@ -164,9 +163,7 @@ Komunikat błędu:
 {{#include ../listings/ch04-understanding-ownership/no-listing-14-dangling-reference/output.txt}}
 ```
 
-This error message refers to a feature we haven’t covered yet: lifetimes. We’ll
-discuss lifetimes in detail in Chapter 10. But, if you disregard the parts
-about lifetimes, the message does contain the key to why this code is a problem:
+Ten komunikat o błędzie odnosi się do funkcji, której jeszcze nie omówiliśmy: okresów istnienia. Omówimy okresy istnienia szczegółowo w rozdziale 10. Jednak jeśli zignorujesz części dotyczące okresów istnienia, komunikat zawiera klucz do wyjaśnienia, dlaczego ten kod jest problemem:
 
 Ten komunikat odnosi się do czegoś, czego jeszcze nie omawialiśmy: czasów życia (ang. lifetimes).
 Będziemy omawiać je szczegółowo w rozdziale 10. Pomijając jednak części o czasie życia, wiadomość zawiera jasne wskazanie problemu związanego z naszym kodem:

@@ -9,7 +9,7 @@ twoich pakietów, więc głównie hostuje kod, który jest open source.
 Rust i Cargo mają funkcje, które ułatwiają ludziom znalezienie i używanie opublikowanego pakietu. Omówimy niektóre z tych funkcji, a następnie wyjaśnimy,
 jak opublikować pakiet.
 
-### Making Useful Documentation Komentarze
+### Tworzenie przydatnej dokumentacji Komentarze
 
 Dokładne dokumentowanie pakietów pomoże innym użytkownikom dowiedzieć się, jak i kiedy ich
 używają, więc warto poświęcić czas na pisanie dokumentacji. W rozdziale
@@ -51,7 +51,7 @@ jak pokazano na rysunku 14-1:
 <span class="caption">Figure 14-1: HTML documentation for the `add_one`
 function</span>
 
-#### Commonly Used Sections
+#### Często używane sekcje
 
 Użyliśmy nagłówka Markdown `# Examples` w Listingu 14-1, aby utworzyć sekcję
 w HTML z tytułem „Examples”. Oto kilka innych sekcji, których twórcy
@@ -73,7 +73,7 @@ Większość komentarzy do dokumentacji nie wymaga wszystkich tych sekcji, ale j
 dobra lista kontrolna, która przypomni Ci o aspektach Twojego kodu, którymi użytkownicy będą chcieli się
 zainteresować.
 
-#### Documentation Komentarze as Tests
+#### Dokumentacja Komentarze jako testy
 
 Dodanie przykładowych bloków kodu w komentarzach do dokumentacji może pomóc zademonstrować,
 jak korzystać z biblioteki, a robienie tego ma dodatkową zaletę: uruchomienie `cargo
@@ -101,7 +101,7 @@ Teraz, jeśli zmienimy funkcję lub przykład tak, że `assert_eq!` w
 example panikuje i ponownie uruchomimy `cargo test`, zobaczymy, że testy dokumentacji wykryją, że
 przykład i kod nie są ze sobą zsynchronizowane!
 
-#### Commenting Contained Items
+#### Komentowanie zawartych elementów
 
 Styl komentarza doc `//!` dodaje dokumentację do elementu zawierającego
 komentarze, a nie do elementów następujących po komentarzach. Zazwyczaj używamy
@@ -139,7 +139,7 @@ Komentarze do dokumentacji w elementach są przydatne do opisywania skrzyń i
 modułów, zwłaszcza. Używaj ich, aby wyjaśnić ogólny cel kontenera, aby
 pomóc użytkownikom zrozumieć organizację skrzyni.
 
-### Exporting a Convenient Public API with `pub use`
+### Eksportowanie wygodnego publicznego interfejsu API za pomocą `pub use`
 
 Struktura Twojego publicznego API jest ważnym czynnikiem przy publikowaniu
 skrzyni. Osoby korzystające z Twojej skrzyni są mniej zaznajomione ze strukturą niż Ty i mogą mieć trudności ze znalezieniem części, których chcą użyć, jeśli Twoja skrzynia
@@ -251,7 +251,7 @@ oddziela tę wewnętrzną strukturę od tego, co prezentujesz swoim użytkowniko
 części kodu skrzynek, które zainstalowałeś, aby sprawdzić, czy ich wewnętrzna struktura
 różni się od ich publicznego API.
 
-### Setting Up a Crates.io Account
+### Konfigurowanie konta Crates.io
 
 Zanim będziesz mógł opublikować jakiekolwiek skrzynki, musisz utworzyć konto na
 [crates.io](https://crates.io/)<!-- ignore --> i uzyskać token API. Aby to zrobić,
@@ -273,7 +273,7 @@ nikomu innemu. Jeśli udostępnisz go komukolwiek z jakiegokolwiek powodu, powin
 unieważnić go i wygenerować nowy token na [crates.io](https://crates.io/)<!-- ignoruj
 -->.
 
-### Adding Metadata to a New Crate
+### Dodawanie metadanych do nowej skrzynki
 
 Załóżmy, że masz skrzynkę, którą chcesz opublikować. Przed opublikowaniem musisz
 dodać metadane w sekcji `[package]` pliku *Cargo.toml* skrzynki.
@@ -359,7 +359,7 @@ license = "MIT LUB Apache-2.0"
 [Dokumentacja Cargo](https://doc.rust-lang.org/cargo/) opisuje inne
 metadane, które możesz określić, aby zapewnić, że inni będą mogli łatwiej odkryć i używać twojej skrzyni.
 
-### Publishing to Crates.io
+### Publikowanie w Crates.io
 
 Teraz, gdy utworzyłeś konto, zapisałeś swój token API, wybrałeś nazwę dla
 swojej skrzyni i określiłeś wymagane metadane, możesz publikować!
@@ -396,7 +396,7 @@ $ cargo publish
 Gratulacje! Udostępniłeś swój kod społeczności Rust i
 każdy może łatwo dodać Twoją skrzynkę jako zależność swojego projektu.
 
-### Publishing a New Version of an Existing Crate
+### Publikowanie nowej wersji istniejącej skrzyni
 
 Gdy wprowadzisz zmiany w swoim pakiecie i będziesz gotowy do wydania nowej wersji,
 zmieniasz wartość `version` określoną w pliku *Cargo.toml* i
@@ -407,7 +407,7 @@ Następnie uruchom `cargo publish`, aby przesłać nową wersję.
 <!-- Stary link, nie usuwaj -->
 <a id="removing-versions-from-cratesio-with-cargo-yank"></a>
 
-### Deprecating Versions from Crates.io with `cargo yank`
+### Wycofywanie wersji z Crates.io za pomocą `cargo yank`
 
 Chociaż nie możesz usunąć poprzednich wersji skrzynki, możesz zapobiec dodawaniu ich przez
 przyszłe projekty jako nowej zależności. Jest to przydatne, gdy

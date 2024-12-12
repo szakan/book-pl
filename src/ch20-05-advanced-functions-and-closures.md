@@ -1,8 +1,8 @@
-## Advanced Funkcje and Closures
+## Zaawansowane funkcje i zamknięcia
 
 W tej sekcji omówiono niektóre zaawansowane funkcje związane z funkcjami i zamknięciami, w tym wskaźniki funkcji i zwracane zamknięcia.
 
-### Function Pointers
+### Wskaźniki funkcji
 
 Rozmawialiśmy o tym, jak przekazywać zamknięcia do funkcji; możesz również przekazywać zwykłe
 funkcje do funkcji! Ta technika jest przydatna, gdy chcesz przekazać
@@ -80,7 +80,7 @@ Tutaj tworzymy instancje `Status::Value` używając każdej wartości `u32` w za
 w którym `map` jest wywoływana za pomocą funkcji inicjatora `Status::Value`.
 Niektórzy wolą ten styl, a inni wolą używać zamknięć. Kompilują się one do tego samego kodu, więc użyj stylu, który jest dla Ciebie bardziej zrozumiały.
 
-### Returning Closures
+### Zamknięcia powrotne
 
 Zamknięcia są reprezentowane przez cechy, co oznacza, że ​​nie można zwracać zamknięć
 bezpośrednio. W większości przypadków, gdy chcesz zwrócić cechę, możesz zamiast tego

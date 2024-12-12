@@ -119,22 +119,22 @@ nowej wartości `email`, jednocześnie używając wartości pozostałych pól z 
 
 Kod przedstawiony w listingu 5-7 tworzy też instancję w zmiennej `user2`, która
 zmienia wartości w polach `email` i `username`, ale pozostawia wartości
-w polach `active` i `sign_in_count` ze zmiennej `user1`. The `..user1` must come last
-to specify that any remaining fields should get their values from the
-corresponding fields in `user1`, but we can choose to specify values for as
-many fields as we want in any order, regardless of the order of the fields in
-the struct’s definition.
+w polach `active` i `sign_in_count` ze zmienną `user1`. `..user1` musi być na końcu,
+aby określić, że wszystkie pozostałe pola powinny pobierać swoje wartości z
+odpowiadających im pól w `user1`, ale możemy określić wartości dla dowolnej
+liczby pól w dowolnej kolejności, niezależnie od kolejności pól w
+definicji struktury.
 
-Note that the struct update syntax uses `=` like an assignment; this is because
-it moves the data, just as we saw in the [„Variables and Data Interacting with
-Move”][move]<!-- ignore --> section. In this example, we can no longer use
-`user1` as a whole after creating `user2` because the `String` in the
-`username` field of `user1` was moved into `user2`. If we had given `user2` new
-`String` values for both `email` and `username`, and thus only used the
-`active` and `sign_in_count` values from `user1`, then `user1` would still be
-valid after creating `user2`. Both `active` and `sign_in_count` are types that
-implement the `Copy` trait, so the behavior we discussed in the [„Stack-Only
-Data: Copy”][copy]<!-- ignore --> section would apply.
+Należy zauważyć, że składnia aktualizacji struktury używa `=` jak przypisania; dzieje się tak, ponieważ
+przenosi ona dane, tak jak widzieliśmy w sekcji [„Zmienne i dane wchodzące w interakcję z
+Move”][move]<!-- ignore -->. W tym przykładzie nie możemy już używać
+`user1` jako całości po utworzeniu `user2`, ponieważ `String` w polu
+`username` `user1` został przeniesiony do `user2`. Gdybyśmy podali `user2` nowe wartości
+`String` zarówno dla `email`, jak i `username`, a zatem użyli tylko wartości
+`active` i `sign_in_count` z `user1`, to `user1` nadal byłby
+prawidłowy po utworzeniu `user2`. Zarówno `active`, jak i `sign_in_count` to typy, które
+implementują cechę `Copy`, więc zachowanie omówione w sekcji [„Stack-Only
+Data: Copy”][copy]<!-- ignore --> miałoby zastosowanie.
 
 ### Wykorzystanie braku nazywania pól w struktorach krotkowych do tworzenia nowych typów
 
@@ -170,15 +170,15 @@ Here’s an example of declaring and instantiating a unit struct named `AlwaysEq
 {{#rustdoc_include ../listings/ch05-using-structs-to-structure-related-data/no-listing-04-unit-like-structs/src/main.rs}}
 ```
 
-To define `AlwaysEqual`, we use the `struct` keyword, the name we want, and
-then a semicolon. No need for curly brackets or parentheses! Then we can get an
-instance of `AlwaysEqual` in the `subject` variable in a similar way: using the
-name we defined, without any curly brackets or parentheses. Imagine that later
-we’ll implement behavior for this type such that every instance of
-`AlwaysEqual` is always equal to every instance of any other type, perhaps to
-have a known result for testing purposes. We wouldn’t need any data to
-implement that behavior! You’ll see in Chapter 10 how to define traits and
-implement them on any type, including unit-like structs.
+Aby zdefiniować `AlwaysEqual`, używamy słowa kluczowego `struct`, nazwy, której chcemy, a
+następnie średnika. Nie ma potrzeby stosowania nawiasów klamrowych ani okrągłych! Następnie możemy uzyskać
+instancję `AlwaysEqual` w zmiennej `subject` w podobny sposób: używając
+nazwy, którą zdefiniowaliśmy, bez żadnych nawiasów klamrowych ani okrągłych. Wyobraź sobie, że później
+zaimplementujemy zachowanie dla tego typu tak, aby każda instancja
+`AlwaysEqual` była zawsze równa każdej instancji dowolnego innego typu, być może w celu
+otrzymania znanego wyniku do celów testowych. Nie potrzebowalibyśmy żadnych danych, aby
+zaimplementować to zachowanie! W rozdziale 10 zobaczysz, jak definiować cechy i
+implementować je w dowolnym typie, w tym w strukturach typu jednostkowego.
 
 
 > ### Własność danych struktury

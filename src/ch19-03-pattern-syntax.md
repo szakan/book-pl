@@ -2,7 +2,7 @@
 
 W tej sekcji zbieramy całą składnię obowiązującą we wzorcach i omawiamy, dlaczego i kiedy warto użyć każdej z nich.
 
-### Matching Literals
+### Dopasowywanie literałów
 
 Jak widziałeś w rozdziale 6, możesz bezpośrednio dopasowywać wzorce do literałów. Poniższy kod podaje kilka przykładów:
 
@@ -14,7 +14,7 @@ Ten kod drukuje `jeden`, ponieważ wartość w `x` wynosi 1. Ta składnia jest p
 gdy chcesz, aby Twój kod wykonał działanie, gdy otrzyma konkretną
 wartość.
 
-### Matching Named Variables
+### Dopasowywanie zmiennych nazwanych
 
 Zmienne nazwane to niepodważalne wzorce, które pasują do dowolnej wartości i używaliśmy ich
 wiele razy w tej książce. Istnieje jednak komplikacja, gdy używasz
@@ -62,7 +62,7 @@ ochrony dopasowania. O obrońcach porozmawiamy później w sekcji [„Dodatkowe
 warunki-warunkowe-z-obrońcami-do-meczu”](#dodatkowe-warunki-warunkowe-z-obrońcami-do-meczu)<!--
 ignoruj ​​-->.
 
-### Multiple Patterns
+### Wiele wzorów
 
 W wyrażeniach `match` możesz dopasować wiele wzorców, używając składni `|`,
 która jest operatorem wzorca *or*. Na przykład w poniższym kodzie dopasowujemy
@@ -75,7 +75,7 @@ co oznacza, że ​​jeśli wartość `x` pasuje do którejkolwiek z wartości 
 
 This code prints `one or two`.
 
-### Matching Ranges of Values with `..=`
+### Dopasowywanie zakresów wartości za pomocą `..=`
 
 Składnia `..=` pozwala nam dopasować do zakresu wartości inkluzywnych. W
 następującym kodzie, gdy wzorzec pasuje do którejkolwiek z wartości w podanym
@@ -104,12 +104,12 @@ Oto przykład użycia zakresów wartości `char`:
 Rust can tell that `'c'` is within the first pattern’s range and prints `early
 ASCII letter`.
 
-### Destructuring to Break Apart Values
+### Destrukturyzacja w celu rozbicia wartości
 
 Możemy również użyć wzorców do destrukturyzacji struktur, wyliczeń i krotek, aby użyć
 różnych części tych wartości. Przeanalizujmy każdą wartość.
 
-#### Destructuring Structs
+#### Destrukturyzacja struktur
 
 Wylistowanie 19-12 przedstawia strukturę `Point` z dwoma polami, `x` i `y`, które możemy rozdzielić, używając wzorca z instrukcją `let`.
 
@@ -175,7 +175,7 @@ zawierającego 0, więc ten kod wydrukuje `Na osi y w 7`.
 Pamiętaj, że wyrażenie `match` zatrzymuje sprawdzanie ramion po znalezieniu
 pierwszego pasującego wzorca, więc nawet jeśli `Point { x: 0, y: 0}` znajduje się na osi `x` i osi `y`, ten kod wydrukuje tylko `Na osi x w punkcie 0`.
 
-#### Destructuring Enums
+#### Destrukturyzacja wyliczeń
 
 W tej książce destrukturyzowaliśmy wyliczenia (na przykład Listing 6-5 w rozdziale 6),
 ale jeszcze nie omówiliśmy wprost, że wzorzec destrukturyzacji wyliczenia
@@ -209,7 +209,7 @@ wzorzec jest podobny do wzorca, który określamy w celu dopasowania krotek. Lic
 zmiennych we wzorcu musi odpowiadać liczbie elementów w wariancie, który
 dopasowujemy.
 
-#### Destructuring Nested Structs and Enums
+#### Destrukturyzacja zagnieżdżonych struktur i wyliczeń
 
 Do tej pory wszystkie nasze przykłady dopasowywały struktury lub wyliczenia o jeden poziom głębiej,
 ale dopasowywanie może działać również na zagnieżdżonych elementach! Na przykład możemy przebudować
@@ -229,7 +229,7 @@ wzorzec wiąże się z trzema wewnętrznymi wartościami `i32`. Wzorzec drugiego
 ramienia również pasuje do wariantu wyliczenia `Message::ChangeColor`, ale wewnętrzne wyliczenie
 pasuje zamiast tego do `Color::Hsv`. Możemy określić te złożone warunki w jednym
 wyrażeniu `match`, nawet jeśli zaangażowane są dwa wyliczenia.
-#### Destructuring Structs and Tuples
+#### Destrukturyzacja struktur i krotek
 
 Możemy mieszać, dopasowywać i zagnieżdżać wzorce destrukturyzacji w jeszcze bardziej złożony sposób.
 Poniższy przykład pokazuje skomplikowaną destrukturyzację, w której zagnieżdżamy struktury i
@@ -245,7 +245,7 @@ wartości, którymi jesteśmy zainteresowani, oddzielnie.
 Destrukturyzacja za pomocą wzorców to wygodny sposób na używanie części wartości, takich jak
 wartość z każdego pola w strukturze, oddzielnie od siebie.
 
-### Ignoring Values in a Pattern
+### Ignorowanie wartości we wzorcu
 
 Widziałeś, że czasami przydatne jest ignorowanie wartości we wzorcu, na przykład
 w ostatnim ramieniu `match`, aby uzyskać zbiór, który tak naprawdę nic nie robi,
@@ -255,7 +255,7 @@ sposobów na ignorowanie całych wartości lub części wartości we wzorcu: uż
 użycie nazwy zaczynającej się od podkreślenia lub użycie `..` w celu zignorowania pozostałych
 części wartości. Przyjrzyjmy się, jak i dlaczego używać każdego z tych wzorców.
 
-#### Ignoring an Entire Value with `_`
+#### Ignorowanie całej wartości za pomocą `_`
 
 Użyliśmy podkreślenia jako wzorca wieloznacznego, który będzie pasował do dowolnej wartości, ale
 nie będzie wiązał się z wartością. Jest to szczególnie przydatne jako ostatnie ramię w wyrażeniu `match`,
@@ -279,7 +279,7 @@ implementujesz cechę, gdy potrzebujesz pewnego sygnatury typu, ale
 ciało funkcji w Twojej implementacji nie potrzebuje jednego z parametrów. W ten sposób unikniesz otrzymania ostrzeżenia kompilatora o nieużywanych parametrach funkcji, co miałoby miejsce,
 gdybyś zamiast tego użył nazwy.
 
-#### Ignoring Parts of a Value with a Nested `_`
+#### Ignorowanie części wartości za pomocą zagnieżdżonego `_`
 
 Możemy również użyć `_` wewnątrz innego wzorca, aby zignorować tylko część wartości, na przykład, gdy chcemy przetestować tylko część wartości, ale nie mamy zastosowania dla innych części w odpowiadającym kodzie, który chcemy uruchomić. Listing 19-18 pokazuje kod,
 odpowiedzialny za zarządzanie wartością ustawienia. Wymagania biznesowe są takie, że
@@ -319,7 +319,7 @@ czwartej wartości w krotce pięciu elementów.
 This code will print `Some numbers: 2, 8, 32`, and the values 4 and 16 will be
 ignored.
 
-#### Ignoring an Unused Variable by Starting Its Name with `_`
+#### Ignorowanie nieużywanej zmiennej poprzez rozpoczęcie jej nazwy od `_`
 
 Jeśli utworzysz zmienną, ale nigdzie jej nie użyjesz, Rust zazwyczaj wyświetli
 ostrzeżenie, ponieważ nieużywana zmienna może być błędem. Jednak czasami
@@ -368,7 +368,7 @@ ponieważ `s` nie zostanie przeniesione do `_`.
 
 This code works just fine because we never bind `s` to anything; it isn’t moved.
 
-#### Ignoring Remaining Parts of a Value with `..`
+#### Ignorowanie pozostałych części wartości za pomocą `..`
 
 W przypadku wartości, które mają wiele części, możemy użyć składni `..`, aby użyć określonych
 części i zignorować resztę, unikając konieczności wymieniania podkreśleń dla każdej
@@ -432,7 +432,7 @@ po tym. Ten kod może oznaczać, że chcemy zignorować `2`, powiązać
 Nazwa zmiennej `second` nie oznacza niczego szczególnego dla Rust, więc otrzymujemy
 błąd kompilatora, ponieważ użycie `..` w dwóch takich miejscach jest niejednoznaczne.
 
-### Extra Conditionals with Match Guards
+### Dodatkowe warunki z obrońcami meczowymi
 
 *Match guard* to dodatkowy warunek `if`, określony po wzorcu w
 ramie `match`, który musi również pasować, aby to ramię zostało wybrane. Match guards są

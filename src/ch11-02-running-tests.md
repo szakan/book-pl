@@ -15,7 +15,7 @@ pliku binarnego testu. Uruchomienie `cargo test --help` wyświetla opcje,
 których można użyć z `cargo test`, a uruchomienie `cargo test -- --help` wyświetla opcje,
 których można użyć po separatorze.
 
-### Running Tests in Parallel or Consecutively
+### Uruchamianie testów równolegle lub kolejno
 
 Gdy uruchamiasz wiele testów, domyślnie są one uruchamiane równolegle przy użyciu wątków,
 co oznacza, że ​​kończą się szybciej i otrzymujesz szybsze informacje zwrotne. Ponieważ
@@ -46,7 +46,7 @@ paralelizmu. Uruchomienie testów przy użyciu jednego wątku zajmie więcej cza
 równolegle, ale testy nie będą ze sobą kolidować, jeśli będą współdzieliły
 stan.
 
-### Showing Function Output
+### Wyświetlanie wyników funkcji
 
 Domyślnie, jeśli test przejdzie, biblioteka testów Rust przechwytuje wszystko, co jest drukowane na
 standardowym wyjściu. Na przykład, jeśli wywołamy `println!` w teście i test
@@ -90,7 +90,7 @@ see the following output:
 {{#include ../listings/ch11-writing-automated-tests/output-only-01-show-output/output.txt}}
 ```
 
-### Running a Subset of Tests by Name
+### Uruchamianie podzbioru testów według nazwy
 
 Czasami uruchomienie pełnego zestawu testów może zająć dużo czasu. Jeśli pracujesz nad
 kodem w określonym obszarze, możesz chcieć uruchomić tylko testy odnoszące się do
@@ -114,7 +114,7 @@ Jeśli uruchomimy testy bez przekazywania żadnych argumentów, jak widzieliśmy
 {{#include ../listings/ch11-writing-automated-tests/listing-11-11/output.txt}}
 ```
 
-#### Running Single Tests
+#### Uruchamianie pojedynczych testów
 
 Możemy przekazać nazwę dowolnej funkcji testowej do `cargo test`, aby uruchomić tylko ten test:
 
@@ -129,7 +129,7 @@ wyświetlenie na końcu `2 filtered out`.
 Nie możemy w ten sposób określić nazw wielu testów; zostanie użyta tylko pierwsza wartość
 podana dla `cargo test`. Istnieje jednak sposób na uruchomienie wielu testów.
 
-#### Filtering to Run Multiple Tests
+#### Filtrowanie w celu uruchomienia wielu testów
 
 Możemy określić część nazwy testu, a każdy test, którego nazwa pasuje do tej wartości,
 zostanie uruchomiony. Na przykład, ponieważ nazwy dwóch naszych testów zawierają `add`, możemy
@@ -142,7 +142,7 @@ uruchomić te dwa, uruchamiając `cargo test add`:
 To polecenie uruchomiło wszystkie testy z `add` w nazwie i odfiltrowało test o nazwie `one_hundred`. Należy również zauważyć, że moduł, w którym pojawia się test, staje się częścią nazwy testu, więc możemy uruchomić wszystkie testy w module, filtrując
 nazwę modułu.
 
-### Ignoring Some Tests Unless Specifically Requested
+### Ignorowanie niektórych testów, chyba że wyraźnie o nie poproszono
 
 Czasami wykonanie kilku konkretnych testów może być bardzo czasochłonne, więc możesz chcieć je wykluczyć podczas większości przebiegów `cargo test`. Zamiast
 wymieniać jako argumenty wszystkie testy, które chcesz uruchomić, możesz zamiast tego oznaczyć adnotacją testy, które wymagają dużo czasu, używając atrybutu `ignore`, aby je wykluczyć, jak pokazano

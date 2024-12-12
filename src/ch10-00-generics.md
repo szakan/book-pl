@@ -1,4 +1,4 @@
-# Generic Types, Traits, and Lifetimes
+# Typy generyczne, cechy i okresy życia
 
 Każdy język programowania ma narzędzia do efektywnego radzenia sobie z duplikacją
 koncepcji. W Rust jednym z takich narzędzi są *generyki*: abstrakcyjne zastępstwa dla
@@ -28,7 +28,7 @@ nam przekazać kompilatorowi wystarczające informacje o pożyczonych wartościa
 zapewnić, że odwołania będą prawidłowe w większej liczbie sytuacji niż bez naszej
 pomocy.
 
-## Removing Duplication by Extracting a Function
+## Usuwanie duplikacji poprzez wyodrębnienie funkcji
 
 Typy generyczne pozwalają nam zastąpić określone typy symbolem zastępczym, który reprezentuje
 wiele typów, aby usunąć duplikację kodu. Zanim zagłębimy się w składnię typów generycznych,

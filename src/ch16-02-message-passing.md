@@ -117,7 +117,7 @@ Got: hi
 
 Perfect!
 
-### Channels and Ownership Transference
+### Kanały i przeniesienie własności
 
 Reguły własności odgrywają kluczową rolę w wysyłaniu wiadomości, ponieważ pomagają
 pisać bezpieczny, współbieżny kod. Zapobieganie błędom w programowaniu współbieżnym jest
@@ -149,7 +149,7 @@ przejmuje własność swojego parametru, a gdy wartość jest przenoszona, odbio
 przejmuje jej własność. Zapobiega to przypadkowemu użyciu wartości ponownie
 po jej wysłaniu; system własności sprawdza, czy wszystko jest w porządku.
 
-### Sending Multiple Values and Seeing the Receiver Waiting
+### Wysyłanie wielu wartości i widzenie odbiorcy oczekującego
 
 Kod w Liście 16-8 został skompilowany i uruchomiony, ale nie pokazał nam wyraźnie, że
 dwa oddzielne wątki komunikowały się ze sobą przez kanał. W Liście
@@ -192,7 +192,7 @@ Ponieważ nie mamy żadnego kodu, który zatrzymuje lub opóźnia pętlę `for` 
 głównym, możemy stwierdzić, że wątek główny czeka na otrzymanie wartości z wątku
 utworzonego.
 
-### Creating Multiple Producers by Cloning the Transmitter
+### Tworzenie wielu producentów poprzez klonowanie nadajnika
 
 Wcześniej wspomnieliśmy, że `mpsc` to akronim od *multiple producers,
 single consumer*. Wykorzystajmy `mpsc` i rozszerzmy kod z Listingu 16-10,

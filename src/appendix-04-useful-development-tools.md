@@ -2,7 +2,7 @@
 
 W tym dodatku omówimy kilka przydatnych narzędzi programistycznych, które zapewnia projekt Rust. Przyjrzymy się automatycznemu formatowaniu, szybkim sposobom stosowania poprawek ostrzeżeń, linterowi i integracji z IDE.
 
-### Automatic Formatting with `rustfmt`
+### Automatyczne formatowanie za pomocą `rustfmt`
 
 Narzędzie `rustfmt` formatuje kod zgodnie ze stylem kodu społeczności.
 Wiele projektów współpracy używa `rustfmt`, aby zapobiec argumentom dotyczącym tego, którego stylu użyć podczas pisania Rust: każdy formatuje swój kod za pomocą tego narzędzia.
@@ -23,7 +23,7 @@ Uruchomienie tego polecenia zmienia format całego kodu Rust w bieżącym pakiec
 
 [rustfmt]: https://github.com/rust-lang/rustfmt
 
-### Fix Your Code with `rustfix`
+### Napraw swój kod za pomocą `rustfix`
 
 Narzędzie rustfix jest dołączone do instalacji Rust i może automatycznie naprawiać
 ostrzeżenia kompilatora, które mają jasny sposób na naprawienie problemu, który prawdopodobnie
@@ -90,7 +90,7 @@ Możesz również użyć polecenia `cargo fix`, aby przenieść swój kod międz
 różnymi edycjami Rust. Edycje są omówione w [Załączniku E][editions].
 .
 
-### More Lints with Clippy
+### Więcej kłaczków z Clippy
 
 Narzędzie Clippy to zbiór lintów do analizy kodu, dzięki czemu możesz wyłapać
 typowe błędy i ulepszyć kod Rust.
@@ -148,7 +148,7 @@ Więcej informacji na temat Clippy znajdziesz w [jego dokumentacji][clippy].
 
 [clippy]: https://github.com/rust-lang/rust-clippy
 
-### IDE Integration Using `rust-analyzer`
+### Integracja IDE przy użyciu `rust-analyzer`
 
 Aby ułatwić integrację IDE, społeczność Rust zaleca używanie
 [`rust-analyzer`][rust-analyzer]<!-- ignore -->. To narzędzie to zestaw

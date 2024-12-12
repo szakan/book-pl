@@ -6,7 +6,7 @@ W obu przypadkach wywołujemy panikę w naszym programie. Domyślnie te paniki
 wyświetlają komunikat o błędzie, rozwijają, czyszczą stos i kończą działanie. Za pomocą zmiennej
 środowiskowej możesz również sprawić, aby Rust wyświetlał stos wywołań, gdy wystąpi panika, aby łatwiej było namierzyć źródło paniki.
 
-> ### Unwinding the Stack or Aborting in Response to a Panic
+> ### Rozwijanie stosu lub przerywanie w odpowiedzi na panikę
 >
 > Domyślnie, gdy wystąpi panika, program zaczyna *odwijać*, co oznacza, że
 > Rust cofa się w górę stosu i czyści dane z każdej napotkanej

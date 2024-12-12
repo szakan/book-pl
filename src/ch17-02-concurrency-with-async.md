@@ -11,7 +11,7 @@ zupełnie inaczej. Nawet jeśli interfejsy API *wyglądają* podobnie między w�
 często mają inne zachowanie — i prawie zawsze mają inne
 cechy wydajności.
 
-### Counting
+### Rachunkowość
 
 Pierwszym zadaniem, z którym zmierzyliśmy się w rozdziale 16, było zliczanie w dwóch oddzielnych wątkach.
 Zróbmy to samo, używając async. Skrzynia `trpl` dostarcza funkcję `spawn_task`,
@@ -75,7 +75,7 @@ po oczekiwaniu.
 
 </Listing>
 
-This updated version runs till *both* loops finish.
+Ta zaktualizowana wersja działa, dopóki *obie* pętle się nie zakończą.
 
 <!-- Nie wyodrębniam danych wyjściowych, ponieważ zmiany w tych danych wyjściowych nie są znaczące;
 zmiany te prawdopodobnie wynikają z faktu, że wątki działają inaczej, a nie ze
@@ -120,7 +120,7 @@ ponieważ jest to po prostu krotka z dwiema wartościami jednostek.
 
 </Listing>
 
-When we run this, we see both futures run to completion:
+Gdy to uruchomimy, zobaczymy, że obie przyszłości dobiegają końca:
 
 <!-- Nie wyodrębniam danych wyjściowych, ponieważ zmiany w tych danych wyjściowych nie są znaczące;
 zmiany te prawdopodobnie wynikają z faktu, że wątki działają inaczej, a nie ze
@@ -163,7 +163,7 @@ po ciele drugiej pętli.
 Aby zwiększyć wyzwanie, sprawdź, czy potrafisz ustalić, jaki będzie wynik w
 każdym przypadku *przed* uruchomieniem kodu!
 
-### Message Passing
+### Przekazywanie wiadomości
 
 Współdzielenie danych między obiektami przyszłości również będzie znajome: ponownie użyjemy przekazywania wiadomości,
 ale tym razem z asynchronicznymi wersjami typów i funkcji. Podążymy

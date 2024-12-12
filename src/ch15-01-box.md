@@ -27,7 +27,7 @@ obiektów cech, które pozwalają na wartości różnych typów,”][trait-objec
 ignoruj ​​--> tylko temu tematowi. Więc to, czego się tutaj nauczysz, zastosujesz ponownie w
 rozdziale 18!
 
-### Using a `Box<T>` to Store Data on the Heap
+### Używanie `Box<T>` do przechowywania danych na stercie
 
 Zanim omówimy przypadek użycia pamięci sterty dla `Box<T>`, omówimy
 składnię i sposób interakcji z wartościami przechowywanymi w `Box<T>`.
@@ -52,7 +52,7 @@ Umieszczanie pojedynczej wartości na stercie nie jest zbyt przydatne, więc nie
 stosie, gdzie są domyślnie przechowywane, jest bardziej odpowiednie w większości
 sytuacji. Przyjrzyjmy się przypadkowi, w którym pola pozwalają nam definiować typy, których nie moglibyśmy zdefiniować, gdybyśmy nie mieli pól.
 
-### Enabling Recursive Types with Boxes
+### Włączanie typów rekurencyjnych za pomocą pól
 
 Wartość *typu rekurencyjnego* może mieć inną wartość tego samego typu jako część
 samej siebie. Typy rekurencyjne stanowią problem, ponieważ w czasie kompilacji Rust musi
@@ -67,7 +67,7 @@ który zdefiniujemy, jest prosty, z wyjątkiem rekurencji; dlatego
 koncepcje w przykładzie, z którym będziemy pracować, będą przydatne za każdym razem, gdy znajdziesz się w
 bardziej złożonych sytuacjach obejmujących typy rekurencyjne.
 
-#### More Information About the Cons List
+#### Więcej informacji o liście wad
 
 *Lista wad* to struktura danych pochodząca z języka programowania Lisp
 i jego dialektów, składająca się z zagnieżdżonych par i będąca wersją Lisp listy powiązanej. Jej nazwa pochodzi od funkcji `cons` (skrót od „construct function”) w Lisp, która konstruuje nową parę z dwóch argumentów. Poprzez
@@ -143,7 +143,7 @@ bezpośrednio. W rezultacie Rust nie może ustalić, ile miejsca potrzebuje do p
 `List`. Wyjaśnijmy, dlaczego otrzymujemy ten błąd. Najpierw przyjrzymy się, jak
 Rust decyduje, ile miejsca potrzebuje do przechowywania wartości typu nierekurencyjnego.
 
-#### Computing the Size of a Non-Recursive Type
+#### Obliczanie rozmiaru typu nierekurencyjnego
 
 Przypomnij sobie wyliczenie `Message`, które zdefiniowaliśmy w Liście 6-2, gdy omawialiśmy definicje wyliczeń w rozdziale 6:
 
@@ -170,7 +170,7 @@ typu `List`. Dlatego `Cons` potrzebuje ilości miejsca równej rozmiarowi
 <span class="caption">Rysunek 15-1: Nieskończona `List` składająca się z nieskończonych wariantów
 `Cons` variants</span>
 
-#### Using `Box<T>` to Get a Recursive Type with a Known Size
+#### Użycie `Box<T>` w celu uzyskania typu rekurencyjnego o znanym rozmiarze
 
 Ponieważ Rust nie potrafi określić, ile miejsca przeznaczyć na typy definiowane rekurencyjnie, kompilator zgłasza błąd z następującą pomocną sugestią:
 

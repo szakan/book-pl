@@ -1,11 +1,11 @@
-## Improving Our I/O Project
+## Ulepszanie naszego projektu I/O
 
 Dzięki tej nowej wiedzy o iteratorach możemy ulepszyć projekt I/O w
 rozdziale 12, używając iteratorów, aby miejsca w kodzie były bardziej przejrzyste i
 zwięzłe. Przyjrzyjmy się, w jaki sposób iteratory mogą ulepszyć naszą implementację funkcji
 `Config::build` i funkcji `search`.
 
-### Removing a `clone` Using an Iterator
+### Usuwanie `clone` za pomocą iteratora
 
 W Liście 12-6 dodaliśmy kod, który pobierał fragment wartości `String` i tworzył
 instancję struktury `Config` poprzez indeksowanie fragmentu i klonowanie
@@ -36,7 +36,7 @@ funkcja `Config::build`, ponieważ iterator uzyska dostęp do wartości.
 Gdy `Config::build` przejmie własność iteratora i przestanie używać operacji indeksowania, które pożyczają, możemy przenieść wartości `String` z iteratora do
 `Config` zamiast wywoływać `clone` i dokonywać nowego przydziału.
 
-#### Using the Returned Iterator Directly
+#### Bezpośrednie używanie zwróconego iteratora
 
 Otwórz plik *src/main.rs* swojego projektu I/O, który powinien wyglądać następująco:
 
@@ -91,7 +91,7 @@ Ponieważ przejmujemy własność `args` i będziemy mutować `args` poprzez
 iterację po nim, możemy dodać słowo kluczowe `mut` do specyfikacji parametru
 `args`, aby uczynić go zmiennym.
 
-#### Using `Iterator` Trait Methods Instead of Indexing
+#### Używanie metod cech `Iterator` zamiast indeksowania
 
 Następnie naprawimy treść `Config::build`. Ponieważ `args` implementuje cechę
 `Iterator`, wiemy, że możemy wywołać na niej metodę `next`! Listing 13-20
@@ -113,7 +113,7 @@ wartość, którą chcemy umieścić w polu `query` `Config`. Jeśli `next` zwr�
 nie podano wystarczającej liczby argumentów i zwracamy wcześniej wartość `Err`. Robimy
 to samo dla wartości `file_path`.
 
-### Making Code Clearer with Iterator Adapters
+### Uczynienie kodu bardziej przejrzystym dzięki adapterom Iterator
 
 Możemy również skorzystać z iteratorów w funkcji `search` w naszym projekcie I/O, która jest tutaj odtworzona w Liście 13-21, tak jak była w Liście 12-19:
 
@@ -146,7 +146,7 @@ Przypomnijmy, że celem funkcji `search` jest zwrócenie wszystkich wierszy w
 `line.contains(query)` zwraca `true`. Następnie zbieramy pasujące wiersze
 do innego wektora za pomocą `collect`. Znacznie prościej! Możesz również wprowadzić tę samą
 zmianę, aby użyć metod iteratora w funkcji `search_case_insensitive`.
-### Choosing Between Loops or Iterators
+### Wybór pomiędzy pętlami a iteratorami
 
 Następnym logicznym pytaniem jest, jaki styl powinieneś wybrać w swoim kodzie i
 dlaczego: oryginalną implementację z Listingu 13-21 czy wersję wykorzystującą

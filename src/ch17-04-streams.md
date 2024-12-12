@@ -138,7 +138,7 @@ pętli `while let`, aby wydrukować wszystkie wiadomości ze strumienia.
 
 </Listing>
 
-When we run this code, we get exactly the results we would expect:
+Po uruchomieniu tego kodu otrzymamy dokładnie takie wyniki, jakich się spodziewaliśmy:
 
 <!-- Nie wyodrębniam danych wyjściowych, ponieważ zmiany w tych danych wyjściowych nie są znaczące;
 zmiany te prawdopodobnie wynikają z faktu, że wątki działają inaczej, a nie ze

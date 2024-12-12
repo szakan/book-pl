@@ -1,4 +1,4 @@
-# More About Cargo and Crates.io
+# Więcej o Cargo i Crates.io
 
 Do tej pory używaliśmy tylko najbardziej podstawowych funkcji Cargo do budowania, uruchamiania i testowania
 naszego kodu, ale może on zrobić o wiele więcej. W tym rozdziale omówimy niektóre z jego

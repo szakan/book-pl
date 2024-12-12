@@ -10,7 +10,7 @@ Przyjrzyjmy się funkcjom, które Rust udostępnia specjalnie do pisania testów
 wykonują te czynności, w tym atrybut `test`, kilka makr i atrybut
 `should_panic`.
 
-### The Anatomy of a Test Function
+### Anatomia funkcji testowej
 
 Najprościej rzecz ujmując, test w Rust to funkcja, która jest adnotowana atrybutem `test`. Atrybuty to metadane dotyczące fragmentów kodu Rust; jednym z przykładów jest
 atrybut `derive`, którego użyliśmy ze strukturami w rozdziale 5. Aby zmienić funkcję
@@ -81,8 +81,8 @@ oznacza, że ​​wszystkie testy przeszły pomyślnie, a część, która brzm
 nie przeszedł pomyślnie`, sumuje liczbę testów, które przeszły pomyślnie lub nie przeszły pomyślnie.
 
 Można oznaczyć test jako zignorowany, aby nie był uruchamiany w określonym
-wystąpieniu; omówimy to w sekcji  [“Running a
-Subset of Tests by Name”][subset]<!-- ignore --> section w dalszej części tego rozdziału. Ponieważ
+wystąpieniu; omówimy to w sekcji  [“Running 
+Podzbiór testów według nazwy”][subset]<!-- ignore --> section w dalszej części tego rozdziału. Ponieważ
 tutaj tego nie zrobiliśmy, podsumowanie pokazuje `0 ignored`. Możemy również przekazać
 argument do polecenia `cargo test`, aby uruchamiać tylko testy, których nazwa pasuje do
 ciągu; nazywa się to *filtrowaniem* i omówimy to w sekcji [„Uruchamianie
@@ -97,8 +97,8 @@ Kolejna część wyników testu zaczynająca się od `Doc-tests adder` dotyczy
 wyników wszelkich testów dokumentacji. Nie mamy jeszcze żadnych testów dokumentacji,
 ale Rust może kompilować dowolne przykłady kodu, które pojawiają się w naszej dokumentacji API.
 Ta funkcja pomaga zachować synchronizację dokumentacji i kodu! Omówimy, jak
-pisać testy dokumentacji w sekcji [“Documentation Komentarze as
-Tests”][doc-comments]<!-- ignore --> rozdziału 14. Na razie
+pisać testy dokumentacji w sekcji [“Dokumentacja Komentarze jako
+Testy”][doc-comments]<!-- ignore --> rozdziału 14. Na razie
 zignorujemy wynik `Doc-tests`.
 
 Zacznijmy dostosowywać test do naszych własnych potrzeb. Najpierw zmieńmy nazwę
@@ -156,7 +156,7 @@ jeden test zaliczony i jeden nieudany.
 
 Teraz, gdy już wiesz, jak wyglądają wyniki testów w różnych scenariuszach, przyjrzyjmy się innym makrom oprócz `panic!`, które są przydatne w testach.
 
-### Checking Results with the `assert!` Macro
+### Sprawdzanie wyników za pomocą makra `assert!`
 
 Makro `assert!`, dostarczane przez bibliotekę standardową, jest przydatne, gdy
 chcesz się upewnić, że jakiś warunek w teście zostanie oceniony jako `true`. Podajemy makrze
@@ -194,8 +194,8 @@ większy prostokąt może rzeczywiście pomieścić mniejszy prostokąt</span>
 
 Zwróć uwagę, że dodaliśmy nowy wiersz wewnątrz modułu `tests`: `use super::*;`.
 Moduł `tests` jest zwykłym modułem, który przestrzega zwykłych reguł widoczności,
-które omówiliśmy w rozdziale 7 w sekcji  [“Paths for Referring to an Item in the Module
-Tree”][paths-for-referring-to-an-item-in-the-module-tree]<!-- ignore -->
+które omówiliśmy w rozdziale 7 w sekcji  [“Ścieżki odwoływania się do elementu w module
+Drzewo”][paths-for-referring-to-an-item-in-the-module-tree]<!-- ignore -->
 . Ponieważ moduł `tests` jest modułem wewnętrznym, musimy przenieść testowany
 kod w module zewnętrznym do zakresu modułu wewnętrznego. Używamy tutaj
 globu, więc wszystko, co zdefiniujemy w module zewnętrznym, jest dostępne dla tego modułu
@@ -241,11 +241,11 @@ Uruchomienie testów teraz wygeneruje następujące wyniki:
 {{#include ../listings/ch11-writing-automated-tests/no-listing-03-introducing-a-bug/output.txt}}
 ```
 
-Our tests caught the bug! Because `larger.width` is 8 and `smaller.width` is
-5, the comparison of the widths in `can_hold` now returns `false`: 8 is not
-less than 5.
+Nasze testy wykryły błąd! Ponieważ `larger.width` wynosi 8, a `smaller.width` wynosi
+5, porównanie szerokości w `can_hold` zwraca teraz `false`: 8 nie jest
+mniejsze niż 5.
 
-### Testing Equality with the `assert_eq!` and `assert_ne!` Makra
+### Testowanie równości za pomocą `assert_eq!` i `assert_ne!` Makra
 
 Powszechnym sposobem weryfikacji funkcjonalności jest testowanie równości między wynikiem
 testowanego kodu a wartością, której oczekujesz od kodu. Możesz
@@ -267,7 +267,7 @@ W Liście 11-7 piszemy funkcję o nazwie `add_two`, która dodaje `2` do swojego
 <span class="caption">Listing 11-7: Testowanie funkcji `add_two` przy użyciu makra
 `assert_eq!`</span>
 
-Let’s check that it passes!
+Sprawdźmy czy przejdzie!
 
 ```console
 {{#include ../listings/ch11-writing-automated-tests/listing-11-07/output.txt}}
@@ -323,17 +323,16 @@ tych typów. Musisz również zaimplementować `Debug`, aby wydrukować wartośc
 asercja się nie powiedzie. Ponieważ obie cechy są cechami pochodnymi, jak wspomniano w
 Listingu 5-12 w rozdziale 5, zwykle jest to tak proste, jak dodanie adnotacji
 `#[derive(PartialEq, Debug)]` do definicji struktury lub wyliczenia. Zobacz
-Dodatek C,  [“Derivable Traits,”][derivable-traits]<!-- ignore --> , aby uzyskać więcej
+Dodatek C,  [“Cechy pochodne,”][derivable-traits]<!-- ignore --> , aby uzyskać więcej
 szczegółów na temat tych i innych cech pochodnych.
 
-### Adding Custom Failure Messages
+### Dodawanie niestandardowych komunikatów o błędach
 
 Możesz również dodać niestandardową wiadomość, która zostanie wydrukowana z komunikatem o błędzie jako
 opcjonalne argumenty dla makr `assert!`, `assert_eq!` i `assert_ne!`. Wszelkie
 argumenty określone po wymaganych argumentach są przekazywane do makra
-`format!` (omówionego w rozdziale 8 w sekcji [“Concatenation with the `+`
-Operator or the `format!`
-Macro”][concatenation-with-the--operator-or-the-format-macro]<!-- ignore -->
+`format!` (omówionego w rozdziale 8 w sekcji [“Połączenie z operatorem `+`
+lub makro `format!`”][concatenation-with-the--operator-or-the-format-macro]<!-- ignore -->
 ), dzięki czemu możesz przekazać ciąg formatu zawierający symbole zastępcze `{}` i
 wartości, które mają znaleźć się w tych symbolach zastępczych. Niestandardowe wiadomości są przydatne do dokumentowania
 znaczenia asercji; gdy test się nie powiedzie, będziesz mieć lepsze pojęcie,
@@ -361,7 +360,7 @@ Teraz wprowadźmy błąd do tego kodu, zmieniając `greeting` na wykluczenie
 {{#rustdoc_include ../listings/ch11-writing-automated-tests/no-listing-06-greeter-with-bug/src/lib.rs:here}}
 ```
 
-Running this test produces the following:
+Uruchomienie tego testu daje następujące wyniki:
 
 ```console
 {{#include ../listings/ch11-writing-automated-tests/no-listing-06-greeter-with-bug/output.txt}}
@@ -384,7 +383,7 @@ Teraz, gdy uruchomimy test, otrzymamy bardziej informacyjny komunikat o błędzi
 
 Możemy zobaczyć wartość, którą faktycznie otrzymaliśmy w wynikach testu, co pomoże nam debugować to, co się wydarzyło, a nie to, czego się spodziewaliśmy.
 
-### Checking for Panics with `should_panic`
+### Sprawdzanie paniki za pomocą `should_panic`
 
 Oprócz sprawdzania wartości zwracanych, ważne jest sprawdzenie, czy nasz kod
 obsługuje warunki błędów zgodnie z oczekiwaniami. Na przykład rozważ typ `Guess`,
@@ -479,7 +478,7 @@ mniejsza lub równa 100'`. Komunikat o panice, który otrzymaliśmy w tym przypa
 `Wartość zgadywanki musi być większa lub równa 1, otrzymano 200.` Teraz możemy zacząć
 rozpoznawać, gdzie jest nasz błąd!
 
-### Using `Result<T, E>` in Tests
+### Używanie `Result<T, E>` w testach
 
 Wszystkie nasze testy do tej pory panikują, gdy się nie powiodą. Możemy również pisać testy, które używają
 `Result<T, E>`! Oto test z Listingu 11-1, przepisany tak, aby używał `Result<T,

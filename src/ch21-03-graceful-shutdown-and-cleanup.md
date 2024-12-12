@@ -15,7 +15,7 @@ akceptować nowe żądania i się wyłączyć. Aby zobaczyć ten kod w akcji, zm
 nasz serwer tak, aby akceptował tylko dwa żądania przed łagodnym zamknięciem
 puli wątków.
 
-### Implementing the `Drop` Trait on `ThreadPool`
+### Implementacja cechy `Drop` w `ThreadPool`
 
 Zacznijmy od zaimplementowania `Drop` w naszej puli wątków. Kiedy pula zostanie
 usunięta, wszystkie nasze wątki powinny się połączyć, aby mieć pewność, że zakończą swoją pracę.
@@ -96,7 +96,7 @@ Następujące zmiany to zrobią:
 Jak omówiono w rozdziale 18, metoda `take` w `Option` usuwa wariant `Some`
 i pozostawia `None` na jego miejscu. Używamy `if let`, aby zdestrukturyzować `Some` i pobrać wątek; następnie wywołujemy `join` w wątku. Jeśli wątek pracownika jest już `None`, wiemy, że wątek pracownika został już wyczyszczony, więc w takim przypadku nic się nie dzieje.
 
-### Signaling to the Threads to Stop Listening for Jobs
+### Sygnalizowanie wątkom zaprzestania nasłuchiwania zadań
 
 Przy wszystkich zmianach, które wprowadziliśmy, nasz kod kompiluje się bez żadnych ostrzeżeń.
 Jednak zła wiadomość jest taka, że ​​ten kod nie działa jeszcze tak, jak byśmy chcieli.
@@ -228,7 +228,7 @@ kilka pomysłów:
 podobny serwer internetowy, używając skrzyni. Następnie porównaj jego API i
 niezawodność z pulą wątków, którą zaimplementowaliśmy.
 
-## Summary
+## Streszczenie
 
 Dobra robota! Dotarłeś do końca książki! Chcemy Ci podziękować za
 dołączenie do nas w tej wycieczce po Rust. Jesteś teraz gotowy, aby wdrażać własne

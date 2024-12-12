@@ -41,7 +41,7 @@ przydatny, gdy chcesz zignorować dowolną wartość, która nie została okreś
 wzorze”][ignoring-values-in-a-pattern]<!-- ignoruj ​​--> w dalszej części tego
 rozdziału.
 
-### Conditional `if let` Expressions
+### Wyrażenia warunkowe `if let`
 
 W rozdziale 6 omówiliśmy, jak używać wyrażeń `if let` głównie jako krótszego sposobu
 na zapisanie odpowiednika `match`, który pasuje tylko do jednego przypadku.
@@ -86,7 +86,7 @@ czy są one wyczerpujące, podczas gdy w przypadku wyrażeń `match` to robi. Gd
 ostatni blok `else` i w związku z tym nie obsłużyli niektórych przypadków, kompilator
 nie powiadomiłby nas o możliwym błędzie logicznym.
 
-### `while let` Conditional Loops
+### Pętle warunkowe `while let`
 
 Podobna w konstrukcji do `if let`, pętla warunkowa `while let` pozwala pętli
 `while` działać tak długo, jak długo wzorzec jest zgodny. Pierwszy raz zobaczyliśmy pętlę
@@ -133,7 +133,7 @@ krotka `(0, 'a')`. Gdy ta wartość zostanie dopasowana do wzorca `(indeks, wart
 `indeks` będzie równy `0`, a `wartość` będzie równa `'a'`, drukując pierwszy wiersz
 wyjścia.
 
-### `let` Statements
+### Instrukcje `let`
 
 Przed tym rozdziałem omawialiśmy wyraźnie używanie wzorców tylko z
 `match` i `if let`, ale w rzeczywistości używaliśmy wzorców również w innych miejscach,

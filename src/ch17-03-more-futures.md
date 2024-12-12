@@ -281,7 +281,7 @@ nawet jeśli mają różne typy. Jest to jednak takie samo, jak praca z dowolnym
 typami w Rust. Futures nie są niczym szczególnym, mimo że mamy pewną
 ładną składnię do pracy z nimi, a to jest dobra rzecz.
 
-### Racing futures
+### Przyszłość wyścigów
 
 Kiedy „łączymy” futures z rodziną funkcji i makr `join`,
 wymagamy, aby *wszystkie* z nich się zakończyły, zanim przejdziemy dalej. Czasami jednak
@@ -332,7 +332,7 @@ użytecznym narzędziem do zapewniania sposobów, aby różne części programu 
 
 Ale *jak* oddałbyś kontrolę z powrotem do środowiska wykonawczego w takich przypadkach?
 
-### Yielding
+### Wydajność
 
 Symulujmy długotrwałą operację. Listing 17-22 wprowadza funkcję `slow`. Używa ona `std::thread::sleep` zamiast `trpl::sleep`, tak aby wywołanie
 `slow` zablokowywało bieżący wątek na pewną liczbę milisekund. Możemy użyć
@@ -476,7 +476,7 @@ dla *ogólnej* wydajności pozwolić operacji na krótkie zablokowanie. Zawsze p
 mierzyć, aby zobaczyć, jakie są faktyczne wąskie gardła wydajnościowe twojego kodu.
 Podstawowa dynamika jest ważna, o której należy pamiętać, jeśli *widzisz*, że wiele pracy jest wykonywanej szeregowo, niż się spodziewałeś, że będzie wykonywana jednocześnie!
 
-### Building Our Own Async Abstractions
+### Budowanie własnych abstrakcji asynchronicznych
 
 Możemy również komponować razem futures, aby tworzyć nowe wzorce. Na przykład możemy
 zbudować funkcję `timeout` z asynchronicznych bloków konstrukcyjnych, które już mamy. Kiedy

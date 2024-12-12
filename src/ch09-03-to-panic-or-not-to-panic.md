@@ -17,7 +17,7 @@ dlaczego tak jest, a następnie omówmy sytuacje, w których kompilator nie moż
 awaria jest niemożliwa, ale Ty jako człowiek możesz. Rozdział zakończy się
 kilkoma ogólnymi wskazówkami, jak zdecydować, czy panikować w kodzie biblioteki.
 
-### Examples, Prototype Code, and Tests
+### Przykłady, kod prototypowy i testy
 
 Kiedy piszesz przykład ilustrujący jakąś koncepcję, uwzględnienie
 solidnego kodu obsługi błędów może sprawić, że przykład będzie mniej jasny. W przykładach
@@ -34,7 +34,7 @@ ta metoda nie jest testowaną funkcjonalnością. Ponieważ `panic!` to sposób,
 jest oznaczany jako niepowodzenie, wywołanie `unwrap` lub `expect` jest dokładnie tym, co powinno się
 stać.
 
-### Cases in Which You Have More Information Than the Compiler
+### Przypadki, w których posiadasz więcej informacji niż kompilator
 
 Właściwe byłoby również wywołanie `unwrap` lub `expect`, gdy masz jakąś
 inną logikę, która zapewnia, że ​​`Result` będzie miał wartość `Ok`, ale ta logika
@@ -118,7 +118,7 @@ dwóch przypadków dla wariantów `Some` i `None`: będzie miał tylko jeden prz
 zdecydowanie mieć wartość. Kod próbujący przekazać nic do Twojej funkcji, nawet się nie skompiluje, więc Twoja funkcja nie musi sprawdzać tego przypadku w czasie wykonywania.
 Innym przykładem jest użycie typu liczby całkowitej bez znaku, takiego jak `u32`, co zapewnia, że
 parametr nigdy nie jest ujemny.
-### Creating Custom Types for Validation
+### Tworzenie niestandardowych typów do walidacji
 
 Rozwińmy ideę wykorzystania systemu typów Rust, aby upewnić się, że mamy prawidłową wartość
 o krok dalej i przyjrzyjmy się stworzeniu niestandardowego typu do walidacji. Przypomnij sobie
@@ -194,7 +194,7 @@ nie zostało sprawdzone przez warunki w funkcji `Guess::new`.
 Funkcja, która ma parametr lub zwraca tylko liczby od 1 do 100, może
 następnie zadeklarować w swoim podpisie, że przyjmuje lub zwraca `Guess` zamiast
 `i32` i nie musi wykonywać żadnych dodatkowych sprawdzeń w swoim ciele.
-## Summary
+## Streszczenie
 
 Funkcje obsługi błędów w Rust zostały zaprojektowane, aby pomóc Ci pisać bardziej solidny kod.
 Makro `panic!` sygnalizuje, że Twój program jest w stanie, którego nie może obsłużyć i

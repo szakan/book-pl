@@ -63,7 +63,7 @@ To jest dokładnie to, co daje nam asynchroniczna abstrakcja Rusta. Zanim jednak
 działa w praktyce, musimy zrobić krótki objazd po różnicach
 między paralelizmem a współbieżnością.
 
-### Parallelism and Concurrency
+### Paralelizm i współbieżność
 
 W poprzednim rozdziale traktowaliśmy paralelizm i współbieżność jako w większości
 zamienne. Teraz musimy je dokładniej rozróżnić, ponieważ

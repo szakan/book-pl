@@ -48,7 +48,7 @@ który potencjalnie mógłbyś zepsuć. Iteratory dają Ci większą elastyczno�
 logiki z wieloma różnymi rodzajami sekwencji, a nie tylko strukturami danych, do których możesz
 indeksować, jak wektory. Przyjrzyjmy się, jak iteratory to robią.
 
-### The `Iterator` Trait and the `next` Method
+### Cecha `Iterator` i metoda `next`
 
 Wszystkie iteratory implementują cechę o nazwie `Iterator`, która jest zdefiniowana w bibliotece standardowej. Definicja cechy wygląda następująco:
 
@@ -99,7 +99,7 @@ własność `v1` i zwraca posiadane wartości, możemy wywołać `into_iter` zam
 `iter`. Podobnie, jeśli chcemy iterować po zmiennych referencjach, możemy wywołać
 `iter_mut` zamiast `iter`.
 
-### Methods that Consume the Iterator
+### Metody zużywające iterator
 
 Cecha `Iterator` ma wiele różnych metod z domyślnymi
 implementacjami dostarczonymi przez bibliotekę standardową; możesz dowiedzieć się o tych
@@ -123,7 +123,7 @@ test ilustrujący użycie metody `sum`:
 
 Nie możemy użyć `v1_iter` po wywołaniu `sum`, ponieważ `sum` przejmuje własność iteratora, na którym go wywołaliśmy.
 
-### Methods that Produce Other Iterators
+### Metody generujące inne iteratory
 
 *Adaptery iteratora* to metody zdefiniowane w cesze `Iterator`, które nie
 konsumują iteratora. Zamiast tego produkują różne iteratory, zmieniając
@@ -176,7 +176,7 @@ Możesz połączyć wiele wywołań adapterów iteratorów, aby wykonywać zło�
 czytelny. Ale ponieważ wszystkie iteratory są leniwe, musisz wywołać jedną z
 metod adaptera konsumującego, aby uzyskać wyniki z wywołań adapterów iteratorów.
 
-### Using Closures that Capture Their Environment
+### Korzystanie z zamknięć, które rejestrują swoje otoczenie
 
 Wiele adapterów iteratorów przyjmuje zamknięcia jako argumenty, a zazwyczaj zamknięcia, które określimy jako argumenty adapterów iteratorów, będą zamknięciami, które przechwytują ich środowisko.
 
