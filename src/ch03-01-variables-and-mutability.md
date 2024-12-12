@@ -1,7 +1,6 @@
 ## Zmienne i ich modyfikowalność
 
-Tak jak wspomniano w rozdziale [„Storing Values with
-Variables”][storing-values-with-variables]<!-- ignore --> , zmienne są domyślnie niemodyfikowalne (niemutowalne, ang. *immutable*). To jeden z wielu prztyczków, którymi Rust zachęca cię do tworzenia kodu w pełni wykorzystującego mechanizmy bezpieczeństwa i prostoty współbieżności, które oferuje ten język programowania. Jednakże nadal możesz
+Tak jak wspomniano w rozdziale [„Przechowywanie wartości ze zmiennymi”][storing-values-with-variables]<!-- ignore --> , zmienne są domyślnie niemodyfikowalne (niemutowalne, ang. *immutable*). To jeden z wielu prztyczków, którymi Rust zachęca cię do tworzenia kodu w pełni wykorzystującego mechanizmy bezpieczeństwa i prostoty współbieżności, które oferuje ten język programowania. Jednakże nadal możesz
 uczynić zmienne modyfikowalnymi. Przyjrzyjmy się bliżej temu, jak i dlaczego Rust zachęca cię do preferowania niemodyfikowalności zmiennych oraz czemu czasem możesz chcieć zrezygnować z tej właściwości.
 
 Gdy zmienna jest niemodyfikowalna, po przypisaniu wartości do danej nazwy, nie można później zmienić tej wartości. Aby to zobrazować, utworzymy nowy projekt o nazwie *variables* w folderze *projects* korzystając z komendy
@@ -73,7 +72,7 @@ const TRZY_GODZINY_W_SEKUNDACH: u32 = 60 * 60 * 3;
 
 Nazwą stałej jest `TRZY_GODZINY_W_SEKUNDACH`, zaś jej wartością jest iloczyn: 60 (liczba sekund w minucie), kolejnej 60 (liczba minut w godzienie) i 3 (liczba godzin którą chcemy odliczyć w programie). Konwencja nazewnicza Rusta dla stałych
 zobowiązuje do wykorzystywanie tylko dużych liter z podkreśleniami między słowami.
-The compiler is able to evaluate a limited set of operations at compile time, which lets us choose to write out this value in a way that’s easier to understand and verify, rather than setting this constant to the value 10,800. See the [Rust Reference’s section on constant evaluation][const-eval] for more information on what operations can be used when declaring constants.
+Kompilator jest w stanie ocenić ograniczony zestaw operacji w czasie kompilacji, co pozwala nam wybrać zapisanie tej wartości w sposób łatwiejszy do zrozumienia i zweryfikowania, zamiast ustawiać tę stałą na wartość 10 800. Zobacz [sekcję Rust Reference’s dotyczącą oceny stałych][const-eval], aby uzyskać więcej informacji na temat operacji, które można wykorzystać podczas deklarowania stałych.
 
 Stałe są dostępne przez cały okres działania programu w zasięgu, w którym zostały zadeklarowane, stają się tym samym dobrym wyborem dla wartości w twojej domenie aplikacji, które mogą być wykorzystywane przez różne elementy programu,
 takich jak maksymalna liczba punktów, które może uzyskać gracz, czy też prędkość światła.

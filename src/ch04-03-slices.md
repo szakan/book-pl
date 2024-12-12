@@ -88,12 +88,17 @@ Na szczęście Rust ma rozwiązanie tego problemu: wycinki łańcuchów (ang. st
 {{#rustdoc_include ../listings/ch04-understanding-ownership/no-listing-17-slice/src/main.rs:here}}
 ```
 
-Zamiast referencji do całego `String`a, `hello` jest referencją do jego części, opisanej fragmentem `[0..5]`.
-Wycinek tworzymy podając zakres w nawiasach `[indeks_początkowy..indeks_końcowy]` i obejmuje on indeksy od `indeks_początkowy` **włącznie** do  `indeks_końcowy` **wyłącznie**.
-Wewnętrznie, struktura danych wycinka przechowuje indeks jego początku i jego długość, która jest równa `indeks_końcowy` minus `indeks_początkowy`.
-Więc w przypadku `let world = &s[6..11];`, `world` jest wycinkiem składającym się ze wskaźnik do bajtu o indeksie 6 w `s` i z długości `5`.
+Zamiast odniesienia do całego `String`, `hello` jest odniesieniem do
+części `String`, określonej w dodatkowym bicie `[0..5]`. Tworzymy wycinki
+używając zakresu w nawiasach, określając `[starting_index..ending_index]`,
+gdzie `starting_index` jest pierwszą pozycją w wycinku, a `ending_index` jest
+o jeden większy od ostatniej pozycji w wycinku. Wewnętrznie struktura danych wycinka
+przechowuje pozycję początkową i długość wycinka, która
+odpowiada `ending_index` minus `starting_index`. Tak więc w przypadku `let
+world = &s[6..11];`, `world` byłby wycinkiem zawierającym wskaźnik do
+bajtu o indeksie 6 `s` o wartości długości `5`.
 
-Rysunek 4-6 pokazuje to w formie diagramu.
+Rysunek 4-7 pokazuje to na diagramie.
 
 <img alt="Three tables: a table representing the stack data of s, which points
 to the byte at index 0 in a table of the string data &quot;hello world&quot; on
@@ -215,7 +220,7 @@ Jednak bardziej doświadczony Rustowiec dokonałby kolejnej zmiany i w zamian na
 
 Jeśli mamy wycinek łańcucha, to możemy go przekazać bezpośrednio.
 Jeśli mamy `String`a, to możemy przekazać wycinek tego `String`a lub referencję do tego `String`a.
-Ta elastyczność wykorzystuje *deref coercions*, własność, którą omówimy w sekcji ["Implicit Deref Coercions with Funkcje and Methods"][deref-coercions]<!--ignore--> rozdziału 15.
+Ta elastyczność wykorzystuje *deref coercions*, własność, którą omówimy w sekcji ["Ukryte przymusy Deref z Funkcią i metodami"][deref-coercions]<!--ignore--> rozdziału 15.
 
 Zdefiniowanie funkcji przyjmującej wycinek łańcucha zamiast referencji do `String`a czyni nasze API bardziej ogólnym i użytecznym bez utraty jakiejkolwiek funkcjonalności:
 

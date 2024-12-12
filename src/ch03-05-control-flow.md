@@ -62,7 +62,7 @@ Jeśli na przykład chcemy, aby blok kodu `if` uruchamiał się tylko wtedy, gdy
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-29-if-not-equal-0/src/main.rs}}
 ```
 
-Ten program wypisze `number wynosi coś innego niż zero`.
+Ten program wypisze `number was something other than zero`.
 
 #### Obsługa wielu warunków za pomocą `else if`
 

@@ -225,7 +225,7 @@ Możemy też uzyskać bezpośredni dostęp do elementu krotki, wykorzystując zn
 
 Powyższy program tworzy krotkę `x`, a następnie uzyskuje dostęp do jej elementów wykorzystując ich indeksy. Podobnie, jak w większości języków programowania pierwszy indeks w krotce ma wartość 0.
 
-The tuple without any values has a special name, *unit*. This value and its corresponding type are both written `()` and represent an empty value or an empty return type. Expressions implicitly return the unit value if they don’t return any other value.
+Krotka bez żadnych wartości ma specjalną nazwę, *unit*. Ta wartość i odpowiadający jej typ są zapisywane jako `()` i reprezentują pustą wartość lub pusty typ zwracany. Wyrażenia domyślnie zwracają wartość jednostki, jeśli nie zwracają żadnej innej wartości.
 
 <!-- #### The Array Type -->
 #### Tablice
@@ -305,8 +305,8 @@ cargo run
 -->
 
 ```console
-thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 10', src/main.rs:19:19
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+wątek 'main' wpadł w panikę przy 'indeksie poza zakresem: len wynosi 5, ale indeks wynosi 10', src/main.rs:19:19
+uwaga: uruchom ze zmienną środowiskową `RUST_BACKTRACE=1`, aby wyświetlić backtrace
 ```
 
 Uruchomienie programu poskutkowało błędem *wykonania* w momencie użycia niepoprawnej wartości dla operacji indeksowania. Program zakończył działanie w tym momencie

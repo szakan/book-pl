@@ -128,8 +128,8 @@ let apples = 5;
 
 W tej linii tworzona jest nowa zmienna o nazwie `apples`, do której przypisana jest wartość 5.
 W Ruście wszystkie zmienne są domyślnie niemutowalne (stałe), co oznacza, że nadana im na początku wartość nie zmieni się.
-We’ll be discussing this concept in detail in the [„Zmienne i zmienność”][variables-and-mutability]<!-- ignore -->
-section in Chapter 3.
+Omówimy tę koncepcję szczegółowo w [„Zmienne i zmienność”][variables-and-mutability]<!-- ignore -->
+sekcja w rozdziale 3.
 Poniższy przykład pokazuje, jak stawiając słowo kluczowe `mut` przed nazwą zmiennej stworzyć zmienną mutowalną:
 
 ```rust,ignore
@@ -210,7 +210,7 @@ Jak już wspomnieliśmy wcześniej, `read_line` zapisuje tekst wpisany przez uż
 [`Result`][result]<!--ignore --> jest [*enumeracją*][enums]<!-- ignore -->, często nazywaną *enumem* lub *typamem wyliczeniowym*.
 Typ wyliczeniowy to typ, który może mieć stały zestaw wartości, nazywanych *wariantami* (*variants*).
 
-[Chapter 6][enums]<!-- ignore --> will cover enums in more detail. The purpose of these `Result` types is to encode error-handling information.
+[Rozdziale 6][enums]<!-- ignore --> omówi enums bardziej szczegółowo. Celem tych typów `Result` jest kodowanie informacji o obsłudze błędów.
 
 Możliwe wartości `Result` to `Ok` i `Err`. `Ok` oznacza, że operacja powiodła się sukcesem i wewnątrz obiektu `Ok` znajduje się poprawnie wygenerowana wartość. `Err` oznacza, że operacja nie powiodła się, i obiekt `Err` zawiera informację o przyczynach niepowodzenia.
 
@@ -313,10 +313,10 @@ z tym samym numerem wersji. Inaczej kody zawarte w tym tutorialu mogą nie zadzi
 Plik *Cargo.toml* podzielony jest na sekcje, których ciało zaczyna się po nagłówku i kończy się w miejscu, gdzie zaczyna się kolejna sekcja. W sekcji `[dependencies]` informujesz Cargo, jakich zewnętrznych skrzyń i w której wersji wymaga twój projekt. Tutaj przy skrzyni `rand` znajduje się specyfikator wersji `0.8.5`.
 Cargo rozumie [Semantic Versioning][semver]<!-- ignore --> (nazywane tez czasem *SemVer*), które to jest standardem zapisywania numeru wersji. Numer `0.8.5` jest właściwie skrótem do `^0.8.5`, które oznacza wersję conajmniej 0.8.5, ale poniżej 0.9.0.
 
-Cargo considers these versions to have public APIs compatible with version
-0.8.5, and this specification ensures you’ll get the latest patch release that
-will still compile with the code in this chapter. Any version 0.9.0 or greater
-is not guaranteed to have the same API as what the following examples use.
+Cargo uważa, że ​​te wersje mają publiczne API zgodne z wersją
+0.8.5, a ta specyfikacja zapewnia, że ​​otrzymasz najnowszą wersję poprawki, która
+nadal będzie kompilować się z kodem w tym rozdziale. Nie ma gwarancji, że jakakolwiek wersja 0.9.0 lub nowsza
+będzie miała to samo API, co poniższe przykłady.
 
 Teraz bez zmieniania niczego w kodzie przekompilujmy projekt, tak jak przedstawia listing 2-2:
 
@@ -704,7 +704,7 @@ Dodanie wyrażenia `break` sprawi, że gra zakończy się, kiedy gracz wygra.
 {{#rustdoc_include ../listings/ch02-guessing-game-tutorial/no-listing-05-quitting/src/main.rs:here}}
 ```
 
-Dodanie linii `break` po `Jesteś zwycięzcą!` powoduje, że program opuszcza pętlę, gdy gracz odgadnie poprawnie
+Dodanie linii `break` po `You win!` powoduje, że program opuszcza pętlę, gdy gracz odgadnie poprawnie
 sekretny numer. Wyjście z pętli jest równoważne z zakończeniem pracy programu, ponieważ pętla jest ostatnią
 częścią funkcji `main`.
 

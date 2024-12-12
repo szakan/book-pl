@@ -190,8 +190,8 @@ bezpośrednie wywoływanie zarówno kodu, który tę pamięć zwalnia, jak i teg
 który ją alokuje. Poprawne wykonanie tej operacji stanowiło historycznie trudny,
 programistyczny problem. Jeśli zapomnimy, marnujemy pamięć. Jeśli zrobimy to za
 wcześnie, zostaniemy z unieważnioną zmienną. Zrobimy to dwukrotnie - to też błąd.
-Musimy połączyć w pary dokładnie jedną `alokację` z dokładnie jednym
-`zwolnieniem`.
+Musimy połączyć w pary dokładnie jedną `allocate` z dokładnie jednym
+`free`.
 
 Rust prezentuje inne podejście: pamięć jest automatycznie zwalniana,
 kiedy skończy się zasięg zmiennej będącej jej właścicielem. Oto wersja naszego
@@ -425,7 +425,7 @@ ilustrującymi, kiedy zaczynają się lub kończą zasięgi zmiennych:
 <span class="caption">Listing 4-3: Funkcje z adnotacjami dotyczącymi własności i
 zasięgów</span>
 
-Gdybyśmy spróbowali użyć `s` po wywołaniu `bierze_na_wlasnosc`, Rust
+Gdybyśmy spróbowali użyć `s` po wywołaniu `takes_ownership`, Rust
 wygenerowałby błąd kompilacji. Te statyczne kontrole chronią nas przed
 popełnianiem błędów. Spróbuj dodać do `main` kod, który używa zmiennych `s` oraz
 `x`, żeby zobaczyć, gdzie można ich używać, a gdzie zasady systemu własności nam
