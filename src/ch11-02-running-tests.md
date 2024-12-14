@@ -65,7 +65,7 @@ parametru i zwraca 10, a także test, który przechodzi i test, który nie przec
 
 </Listing>
 
-When we run these tests with `cargo test`, we’ll see the following output:
+Gdy uruchomimy te testy za pomocą polecenia `cargo test`, zobaczymy następujący wynik:
 
 ```console
 {{#include ../listings/ch11-writing-automated-tests/listing-11-10/output.txt}}
@@ -83,8 +83,7 @@ również wyświetlał dane wyjściowe dla testów, które się powiodły, za po
 $ cargo test -- --show-output
 ```
 
-When we run the tests in Listing 11-10 again with the `--show-output` flag, we
-see the following output:
+Gdy ponownie uruchomimy testy z Listingu 11-10 z flagą `--show-output`, zobaczymy następujący wynik:
 
 ```console
 {{#include ../listings/ch11-writing-automated-tests/output-only-01-show-output/output.txt}}

@@ -94,8 +94,8 @@ argumentem, który powinien być połączony z wartością zwracaną za pomocą 
 
 Inne języki programowania nie wymagają łączenia argumentów w celu zwrócenia
 wartości w sygnaturze, ale ta praktyka stanie się łatwiejsza z czasem. Możesz
-porównać ten przykład z sekcją [„Validating References with
-Lifetimes”][validating-references-with-lifetimes]<!-- ignore --> w
+porównać ten przykład z sekcją [„Sprawdzanie referencji za pomocą
+Czasów życia”][validating-references-with-lifetimes]<!-- ignore --> w
 rozdziale 10.
 
 Teraz uruchommy test:
@@ -209,7 +209,7 @@ powinno zwrócić dokładnie jeden wiersz z wiersza Emily Dickinson, “frog”:
 {{#include ../listings/ch12-an-io-project/no-listing-02-using-search-in-run/output.txt}}
 ```
 
-Cool! Now let’s try a word that will match multiple lines, like “body”:
+Świetnie! Teraz spróbujmy słowa, które będzie pasowało do wielu linii, np. „body”:
 
 ```console
 {{#include ../listings/ch12-an-io-project/output-only-03-multiple-matches/output.txt}}

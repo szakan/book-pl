@@ -33,12 +33,12 @@ Składnia metody pojawia się po nazwie instancji: dodajemy kropkę, a po niej n
 nawiasy i argumenty jeśli są wymagane.
 
 W sygnaturze funkcji `area` używamy `&self` zamiast `rectangle: &Rectangle`.
-The `&self` is actually short for `self: &Self`. Within an `impl` block, the
-type `Self` is an alias for the type that the `impl` block is for. Methods must
-have a parameter named `self` of type `Self` for their first parameter, so Rust
-lets you abbreviate this with only the name `self` in the first parameter spot.
-Note that we still need to use the `&` in front of the `self` shorthand to
-indicate that this method borrows the `Self` instance, just as we did in
+`&self` jest w rzeczywistości skrótem od `self: &Self`. W bloku `impl`
+typ `Self` jest aliasem typu, dla którego przeznaczony jest blok `impl`. Metody muszą
+mieć parametr o nazwie `self` typu `Self` jako pierwszy parametr, więc Rust
+pozwala na skrócenie tego, pozostawiając tylko nazwę `self` w miejscu pierwszego parametru.
+Należy zauważyć, że nadal musimy użyć `&` przed skrótem `self`, aby
+wskazać, że ta metoda pożycza instancję `Self`, tak jak zrobiliśmy to w
 `rectangle: &Rectangle`.
 Metody mogą wejść w posiadanie `self`, pożyczyć `self` niemutowalnie, lub pożyczyć `self` mutowalnie, 
 tak jakby to był jakikolwiek inny parametr.

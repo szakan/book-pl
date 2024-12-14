@@ -60,7 +60,7 @@ z wycinkiem wartości `i32` lub wartości `char`. Należy zauważyć, że ten ko
 
 </Listing>
 
-If we compile this code right now, we’ll get this error:
+Jeśli skompilujemy ten kod teraz, otrzymamy następujący błąd:
 
 ```console
 {{#include ../listings/ch10-generic-types-traits-and-lifetimes/listing-10-05/output.txt}}

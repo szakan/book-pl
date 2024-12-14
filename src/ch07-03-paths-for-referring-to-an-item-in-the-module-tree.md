@@ -19,7 +19,7 @@ Pomimo że ścieżki podane w przykładzie są poprawne, to jego skompilowanie n
 Za chwilę wyjaśnimy jaki.
 
 Funkcja `eat_at_restaurant` jest częścią publicznego API naszej skrzyni bibliotecznej, więc oznaczyliśmy ją słowem kluczowym `pub`.
-Bardziej szczegółowo omawiamy to słowo w sekcji ["Exposing Paths with the `pub` Keyword"][pub]<!-- ignore -->.
+Bardziej szczegółowo omawiamy to słowo w sekcji ["Udostępnianie ścieżek ze słowem kluczowym `pub`"][pub]<!-- ignore -->.
 
 <span class="filename">Plik: src/lib.rs</span>
 
@@ -124,7 +124,7 @@ Następnie, ponieważ `hosting` i `add_to_waitlist` są oznaczone jako `pub`, to
 
 Jeśli planujesz udostępnić swoją skrzynię biblioteczną, aby inne projekty mogły korzystać z twojego kodu, twoje publiczne API jest umową z użytkownikami skrzyni, która określa, w jaki sposób mogą oni korzystać z twojego kodu.
 Jest wiele aspektów dotyczących zarządzania zmianami w publicznym API tak, by ułatwić utrzymanie od niego zależności.
-Rozważania na ich temat wykraczają jednak poza zakres tej książki; zainteresowanych tym tematem odsyłamy do [The Rust API Guidelines][api-guidelines].
+Rozważania na ich temat wykraczają jednak poza zakres tej książki; zainteresowanych tym tematem odsyłamy do [Wytyczne dotyczące interfejsu API Rust][api-guidelines].
 
 > #### Pakiety z Programami i Bibliotekami - Najlepsze Praktyki
 >

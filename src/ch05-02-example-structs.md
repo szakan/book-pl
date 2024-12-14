@@ -193,30 +193,28 @@ Użycie stylu `{:#?}` w naszym przykładzie wypisze:
 {{#include ../listings/ch05-using-structs-to-structure-related-data/output-only-02-pretty-debug/output.txt}}
 ```
 
-Another way to print out a value using the `Debug` format is to use the [`dbg!`
-macro][dbg]<!-- ignore -->, which takes ownership of an expression (as opposed
-to `println!`, which takes a reference), prints the file and line number of
-where that `dbg!` macro call occurs in your code along with the resultant value
-of that expression, and returns ownership of the value.
+Innym sposobem na wydrukowanie wartości przy użyciu formatu `Debug` jest użycie makra [`dbg!`
+][dbg]<!-- ignore -->, które przejmuje własność wyrażenia (w przeciwieństwie do `println!`, które przyjmuje odniesienie), drukuje plik i numer wiersza,
+gdzie to wywołanie makra `dbg!` występuje w kodzie wraz z wartością wynikową
+tego wyrażenia i zwraca własność wartości.
 
-> Note: Calling the `dbg!` macro prints to the standard error console stream
-> (`stderr`), as opposed to `println!`, which prints to the standard output
-> console stream (`stdout`). We’ll talk more about `stderr` and `stdout` in the
-> [„Zapisywanie komunikatów o błędach na standardowym wyjściu zamiast na standardowym wyjściu”
-> section in Chapter 12][err]<!-- ignore -->.
+> Uwaga: Wywołanie makra `dbg!` drukuje do strumienia konsoli błędów standardowych
+> (`stderr`), w przeciwieństwie do `println!`, które drukuje do strumienia konsoli
+> wyjścia standardowego (`stdout`). O `stderr` i `stdout` porozmawiamy więcej w sekcji
+> [„Zapisywanie komunikatów o błędach na standardowym uzgodnionym”
+> w rozdziale 12][err]<!-- ignore -->.
 
-Here’s an example where we’re interested in the value that gets assigned to the
-`width` field, as well as the value of the whole struct in `rect1`:
+Oto przykład, w którym interesuje nas wartość przypisana do pola
+`width`, a także wartość całej struktury w `rect1`:
 
 ```rust
 {{#rustdoc_include ../listings/ch05-using-structs-to-structure-related-data/no-listing-05-dbg-macro/src/main.rs}}
 ```
 
-We can put `dbg!` around the expression `30 * scale` and, because `dbg!`
-returns ownership of the expression’s value, the `width` field will get the
-same value as if we didn’t have the `dbg!` call there. We don’t want `dbg!` to
-take ownership of `rect1`, so we use a reference to `rect1` in the next call.
-Here’s what the output of this example looks like:
+Możemy umieścić `dbg!` wokół wyrażenia `30 * scale` i, ponieważ `dbg!`
+zwraca własność wartości wyrażenia, pole `width` otrzyma tę samą wartość, co gdybyśmy nie wywołali `dbg!`. Nie chcemy, aby `dbg!`
+przejęło własność `rect1`, więc używamy odwołania do `rect1` w następnym wywołaniu.
+Oto jak wygląda wynik tego przykładu:
 
 ```console
 {{#include ../listings/ch05-using-structs-to-structure-related-data/no-listing-05-dbg-macro/output.txt}}
@@ -232,7 +230,7 @@ rozgryźć, co robi twój kod!
 
 Oprócz cechy `Debug`, Rust dostarcza cały szereg innych cech, które możemy nadać za pomocą atrybutu `derive`, by wzbogacić nasze typy o dodatkową funkcjonalność.
 Te cechy i ich zachowania opisane są w [Załączniku C][app-c]<!-- ignore -->. Jak dodawać takim cechom własne implementacje oraz także jak tworzyć własne cechy omówimy w rozdziale 10.
-There are also many attributes other than `derive`; for more information, see [sekcja „Atrybuty” w podręczniku Rust Reference][attributes].
+Istnieje również wiele innych atrybutów niż ``derive``; aby uzyskać więcej informacji, zobacz [sekcja „Atrybuty” w podręczniku Rust Reference][attributes].
 
 Nasza funkcja `area` jest dość specyficzna: oblicza pola jedynie prostokątów.
 Skoro i tak nie zadziała ona z żadnym innym typem, przydatne 

@@ -159,10 +159,10 @@ Oprócz tego wyjątku struktury krotkowe zachowują się całkiem jak krotki: mo
 ### Struktura jednostkowa bez żadnych pól
 
 Możesz także definiować struktury nie posiadające żadnych pól!
-Są to tzw. *struktury jednostkowe* (ang. unit-like structs), bo zachowują się podobnie do `()`, czyli typu jednostkowego wspomnianego w rozdziale [„The Tuple Type”][tuples]<!-- ignore -->.
+Są to tzw. *struktury jednostkowe* (ang. unit-like structs), bo zachowują się podobnie do `()`, czyli typu jednostkowego wspomnianego w rozdziale [„Typ krotki”][tuples]<!-- ignore -->.
 Struktury jednostkowe mogą być przydatne, gdy chcemy zaimplementować cechę na jakimś typie, ale nie potrzebujemy przechowywać żadnych danych. Cechy omawiamy w rozdziale 10.
 
-Here’s an example of declaring and instantiating a unit struct named `AlwaysEqual`:
+Oto przykład deklaracji i utworzenia instancji struktury jednostki o nazwie `AlwaysEqual`:
 
 <span class="filename">Filename: src/main.rs</span>
 

@@ -252,7 +252,7 @@ oczekujemy na wynik wywołania `page_title`, jak w Liście 17-4.
 
 </Listing>
 
-When we run this, we get the behavior we might have expected initially:
+Po uruchomieniu tego otrzymamy zachowanie, którego mogliśmy się początkowo spodziewać:
 
 ```console
 {{#include ../listings/ch17-async-await/listing-17-04/output.txt}}

@@ -87,8 +87,8 @@ Nie możemy używać zmiennych `field_name` i `field_value` po tym, jak zostały
 Jeśli wstawimy odwołania do wartości do mapy skrótów, wartości nie zostaną przeniesione
 do mapy skrótów. Wartości, do których wskazują odwołania, muszą być prawidłowe
 przynajmniej tak długo, jak długo mapa skrótów jest prawidłowa. Więcej na temat tych problemów omówimy w sekcji
-[“Validating References with
-Lifetimes”][validating-references-with-lifetimes]<!-- ignore --> w
+[“Sprawdzanie referencji za pomocą
+Czasów życia”][validating-references-with-lifetimes]<!-- ignore --> w
 rozdziale 10.
 ### Aktualizowanie mapy skrótów
 
@@ -118,8 +118,8 @@ będzie zawierać tylko jedną parę klucz-wartość, ponieważ wstawiamy warto�
 
 </Listing>
 
-This code will print `{"Blue": 25}`. The original value of `10` has been
-overwritten.
+Ten kod wydrukuje `{"Blue": 25}`. Oryginalna wartość `10` została
+nadpisana.
 
 <!-- Old headings. Do not remove or links may break. -->
 <a id="only-inserting-a-value-if-the-key-has-no-value"></a>
@@ -174,7 +174,7 @@ wartość `0`.
 
 Ten kod wydrukuje `{"world": 2, "hello": 1, "wonderful": 1}`. Możesz zobaczyć
 te same pary klucz-wartość wydrukowane w innej kolejności: przypomnij sobie z sekcji
-[“Accessing Values in a Hash Map”][access]<!-- ignore -->, że
+[“Uzyskiwanie dostępu do wartości w mapie skrótów”][access]<!-- ignore -->, że
 iteracja po mapie skrótów odbywa się w dowolnej kolejności.
 
 Metoda `split_whitespace` zwraca iterator po podwycinkach, oddzielonych

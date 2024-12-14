@@ -300,7 +300,7 @@ zaimplementowano w `Dog`, mówiąc, że chcemy traktować typ `Dog` jako
 {{#include ../listings/ch20-advanced-features/listing-20-21/output.txt}}
 ```
 
-In general, fully qualified syntax is defined as follows:
+Ogólnie rzecz biorąc, składnia w pełni kwalifikowana jest zdefiniowana następująco:
 
 ```rust,ignore
 <Type as Trait>::function(receiver_if_method, next_arg, ...);

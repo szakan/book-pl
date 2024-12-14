@@ -22,7 +22,7 @@ $ cargo run -- searchstring example-filename.txt
 W tej chwili program wygenerowany przez `cargo new` nie może przetworzyć argumentów, które mu
 podajemy. Niektóre istniejące biblioteki na [crates.io](https://crates.io/) mogą pomóc
 w napisaniu programu, który akceptuje argumenty wiersza poleceń, ale ponieważ dopiero uczysz się tej koncepcji, zaimplementujmy tę możliwość sami.
-### Reading the Argument Values
+### Odczytywanie wartości argumentów
 
 Aby umożliwić `minigrep` odczytywanie wartości argumentów wiersza poleceń, które do niego przekazujemy,
 będziemy potrzebować funkcji `std::env::args` dostarczonej w standardowej
@@ -88,7 +88,7 @@ wyświetlić ją w wiadomościach lub zmienić zachowanie programu na podstawie 
 jaki alias wiersza poleceń został użyty do wywołania programu. Jednak na potrzeby tego
 rozdziału zignorujemy to i zapiszemy tylko dwa potrzebne nam argumenty.
 
-### Saving the Argument Values in Variables
+### Zapisywanie wartości argumentów w zmiennych
 
 Program jest obecnie w stanie uzyskać dostęp do wartości określonych jako argumenty wiersza poleceń. Teraz musimy zapisać wartości dwóch argumentów w zmiennych, abyśmy mogli używać tych wartości w pozostałej części programu. Robimy to w Liście
 12-2.

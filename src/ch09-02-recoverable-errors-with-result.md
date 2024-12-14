@@ -5,7 +5,7 @@ Czasami, gdy funkcja zawodzi, dzieje się tak z powodu, który można łatwo zin
 operacja się nie powiedzie, ponieważ plik nie istnieje, możesz chcieć utworzyć plik,
 zamiast kończyć proces.
 
-Przypomnij sobie z [“Handling Potential Failure with `Result`”][handle_failure]<!--
+Przypomnij sobie z [“Radzenie sobie z potencjalną awarią za pomocą  `Result`”][handle_failure]<!--
 ignore --> w rozdziale 2, że wyliczenie `Result` jest zdefiniowane jako mające dwa
 warianty, `Ok` i `Err`, w następujący sposób:
 
@@ -60,7 +60,7 @@ Rozdziale 6.
 {{#rustdoc_include ../listings/ch09-error-handling/listing-09-04/src/main.rs}}
 ```
 
-<span class="caption">Listing 9-4: Using a `match` expression to handle the
+<span class="caption">Listing 9-4: Używanie wyrażenia `match` do obsługi
 `Result` warianty, które mogą zostać zwrócone</span>
 
 Należy zauważyć, że podobnie jak wyliczenie `Option`, wyliczenie `Result` i jego warianty zostały

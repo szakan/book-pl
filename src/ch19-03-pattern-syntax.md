@@ -73,7 +73,7 @@ co oznacza, że ​​jeśli wartość `x` pasuje do którejkolwiek z wartości 
 {{#rustdoc_include ../listings/ch19-patterns-and-matching/no-listing-02-multiple-patterns/src/main.rs:here}}
 ```
 
-This code prints `one or two`.
+Ten kod drukuje `one or two`.
 
 ### Dopasowywanie zakresów wartości za pomocą `..=`
 
@@ -316,9 +316,8 @@ czwartej wartości w krotce pięciu elementów.
 
 </Listing>
 
-This code will print `Some numbers: 2, 8, 32`, and the values 4 and 16 will be
-ignored.
-
+Ten kod wydrukuje `Some numbers: 2, 8, 32`, a wartości 4 i 16 zostaną
+zignorowane.
 #### Ignorowanie nieużywanej zmiennej poprzez rozpoczęcie jej nazwy od `_`
 
 Jeśli utworzysz zmienną, ale nigdzie jej nie użyjesz, Rust zazwyczaj wyświetli
@@ -366,7 +365,7 @@ ponieważ `s` nie zostanie przeniesione do `_`.
 
 </Listing>
 
-This code works just fine because we never bind `s` to anything; it isn’t moved.
+Ten kod działa dobrze, ponieważ nigdy nie wiążemy `s` z niczym; nie jest ono przenoszone.
 
 #### Ignorowanie pozostałych części wartości za pomocą `..`
 

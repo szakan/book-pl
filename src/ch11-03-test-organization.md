@@ -19,7 +19,7 @@ kodem, który testują. Przyjętą konwencją jest utworzenie modułu o nazwie `
 w każdym pliku, aby zawierał funkcje testowe i adnotację modułu za pomocą
 `cfg(test)`.
 
-#### The Tests Module and `#[cfg(test)]`
+#### Testy Module i `#[cfg(test)]`
 
 Adnotacja `#[cfg(test)]` w module tests mówi Rustowi, aby skompilował i uruchomił
 kod testowy tylko wtedy, gdy uruchamiasz `cargo test`, a nie gdy uruchamiasz `cargo build`.
@@ -144,9 +144,9 @@ po którym następuje nazwa pliku:
 {{#include ../listings/ch11-writing-automated-tests/output-only-05-single-integration/output.txt}}
 ```
 
-This command runs only the tests in the *tests/integration_test.rs* file.
+To polecenie uruchamia tylko testy z pliku *tests/integration_test.rs*.
 
-#### Submodules in Integration Tests
+#### Podmoduły w testach integracyjnych
 
 W miarę dodawania kolejnych testów integracyjnych możesz chcieć utworzyć więcej plików w katalogu
 *tests*, aby ułatwić ich organizację; na przykład możesz grupować funkcje testowe
@@ -216,7 +216,7 @@ z testu `it_adds_two` w *tests/integration_test.rs*:
 Należy zauważyć, że deklaracja `mod common;` jest taka sama jak deklaracja modułu, którą zademonstrowaliśmy w Liście 7-21. Następnie w funkcji testowej możemy wywołać funkcję
 `common::setup()`.
 
-#### Integration Tests for Binary Crates
+#### Testy integracyjne dla skrzyń binarnych
 
 Jeśli nasz projekt jest binarną skrzynią, która zawiera tylko plik *src/main.rs* i
 nie ma pliku *src/lib.rs*, nie możemy tworzyć testów integracyjnych w katalogu
@@ -231,7 +231,7 @@ Jeśli ważne funkcje działają, niewielka ilość kodu w pliku
 *src/main.rs* również będzie działać, a ta niewielka ilość kodu nie musi być
 testowana.
 
-## Summary
+## Streszczenie
 
 Funkcje testowania języka Rust zapewniają sposób określania sposobu działania kodu, aby
 zapewnić, że będzie on działał zgodnie z oczekiwaniami, nawet gdy wprowadzasz zmiany. Testy jednostkowe

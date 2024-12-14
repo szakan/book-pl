@@ -331,7 +331,7 @@ najbardziej powszechny i ​​podąża za ABI języka programowania C.
 > }
 > ```
 >
-> This usage of `extern` does not require `unsafe`.
+> Takie użycie `extern` nie wymaga `unsafe`.
 
 ### Dostęp do zmiennej statycznej lub jej modyfikacja
 

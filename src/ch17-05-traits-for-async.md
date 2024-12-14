@@ -319,7 +319,8 @@ które go tworzą. Możemy owinąć `String` w `Pin`, jak pokazano na Rysunku
 
 <img alt="Concurrent work flow" src="img/trpl17-08.svg" class="center" />
 
-<figcaption>Figure 17-8: Pinning a String, with a dotted line indicating that the String implements the `Unpin` trait, so it is not pinned.</figcaption>
+<figcaption>Rysunek 17-8: Przypinanie ciągu znaków, z linią przerywaną wskazującą, że ciąg znaków implementuje cechę `Unpin` więc nie jest przypięty.
+</figcaption>
 
 </figure>
 

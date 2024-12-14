@@ -57,7 +57,7 @@ nie możesz bezpośrednio przetestować funkcji `main`, ta struktura pozwala prz
 logikę programu, przenosząc ją do funkcji w *lib.rs*. Kod, który
 pozostaje w *main.rs*, będzie wystarczająco mały, aby zweryfikować jego poprawność, odczytując go. Przeróbmy nasz program, postępując zgodnie z tym procesem.
 
-#### Extracting the Argument Parser
+#### Ekstrakcja parsera argumentów
 
 Wyodrębnimy funkcjonalność do analizy argumentów do funkcji, którą
 `main` wywoła, aby przygotować się do przeniesienia logiki analizy wiersza poleceń do
@@ -85,7 +85,7 @@ Ta przeróbka może wydawać się przesadą w przypadku naszego małego programu
 w małych, przyrostowych krokach. Po wprowadzeniu tej zmiany uruchom program ponownie,
 aby sprawdzić, czy parsowanie argumentów nadal działa. Dobrze jest często sprawdzać postępy,
 aby pomóc zidentyfikować przyczynę problemów, gdy wystąpią.
-#### Grouping Configuration Values
+#### Grupowanie wartości konfiguracji
 
 Możemy wykonać jeszcze jeden mały krok, aby jeszcze bardziej ulepszyć funkcję `parse_config`.
 W tej chwili zwracamy krotkę, ale natychmiast rozbijamy ją
@@ -148,7 +148,7 @@ Teraz nasz kod wyraźniej przekazuje, że `query` i `file_path` są powiązane i
 używa tych wartości, wie, aby znaleźć je w wystąpieniu `config` w polach
 nazwanych zgodnie z ich przeznaczeniem.
 
-#### Creating a Constructor for `Config`
+#### Tworzenie konstruktora dla `Config`
 
 Do tej pory wyodrębniliśmy logikę odpowiedzialną za analizowanie argumentów wiersza poleceń
 z `main` i umieściliśmy ją w funkcji `parse_config`. Dzięki temu
@@ -192,7 +192,7 @@ bez żadnych argumentów; będzie wyglądał tak:
 Wiersz `index out of bounds: the len is 1 but the index is 1` jest komunikatem o błędzie przeznaczonym
 dla programistów. Nie pomoże on naszym użytkownikom końcowym zrozumieć, co powinni zrobić zamiast tego. Naprawmy to teraz.
 
-#### Improving the Error Message
+#### Ulepszanie komunikatu o błędzie
 
 W Liście 12-8 dodajemy sprawdzenie w funkcji `new`, które zweryfikuje, czy wycinek jest wystarczająco długi przed uzyskaniem dostępu do indeksu 1 i indeksu 2. Jeśli wycinek nie jest wystarczająco długi, program wpada w panikę i wyświetla lepszy komunikat o błędzie.
 
@@ -230,7 +230,7 @@ użyjemy innej techniki, o której dowiedziałeś się w rozdziale 9 — [zwraca
 <!-- Stare nagłówki. Nie usuwaj, bo linki mogą się zepsuć. -->
 <a id="returning-a-result-from-new-instead-of-calling-panic"></a>
 
-#### Returning a `Result` Instead of Calling `panic!`
+#### Zwrócenie `Result` zamiast wywołania `panic!`
 
 Zamiast tego możemy zwrócić wartość `Result`, która będzie zawierać instancję `Config` w przypadku
 pomyślnego zakończenia i opisze problem w przypadku błędu. Zmienimy również nazwę funkcji z `new` na `build`, ponieważ wielu
@@ -267,7 +267,7 @@ wyjść z procesu w sposób bardziej czysty w przypadku błędu.
 <!-- Stare nagłówki. Nie usuwaj, ponieważ linki mogą zostać zerwane. -->
 <a id="calling-confignew-and-handling-errors"></a>
 
-#### Calling `Config::build` and Handling Errors
+#### Wywoływanie `Config::build` i obsługa błędów
 
 Aby obsłużyć przypadek błędu i wydrukować przyjazną dla użytkownika wiadomość, musimy zaktualizować
 `main`, aby obsłużyć `Result` zwracany przez `Config::build`, jak pokazano w
@@ -293,7 +293,7 @@ wartość jest wartością `Err`, ta metoda wywołuje kod w *closure*, który je
 anonimową funkcją, którą definiujemy i przekazujemy jako argument do `unwrap_or_else`.
 Omówimy zamknięcia bardziej szczegółowo w [Rozdział 13][ch13]<!-- ignore -->. Na
 teraz musisz wiedzieć, że `unwrap_or_else` przekaże wewnętrzną wartość
-`Err`, która w tym przypadku jest statycznym ciągiem `"not enough arguments"`
+`Err`, która w tym przypadku jest statycznym ciągiem `"za mało argumentów"`
 który dodaliśmy w Liście 12-9, do naszego zamknięcia w argumencie `err`, który
 pojawia się między pionowymi rurami. Kod w zamknięciu może następnie użyć wartości
 `err` podczas uruchamiania.
@@ -312,11 +312,10 @@ dodatkowych danych wyjściowych. Spróbujmy:
 
 Świetnie! Ten wynik jest o wiele bardziej przyjazny dla naszych użytkowników.
 
-### Extracting Logic from `main`
+### Wyodrębnianie logiki z `main`
 
 Teraz, gdy zakończyliśmy refaktoryzację parsowania konfiguracji, przejdźmy do
-logiki programu. Jak stwierdziliśmy w [„Separation of Concerns for Binary
-Projects”](#separation-of-concerns-for-binary-projects)<!-- ignore -->,
+logiki programu. Jak stwierdziliśmy w [“Separacja obaw dla projektów binarnych”](#separation-of-concerns-for-binary-projects)<!-- ignore -->,
 wyodrębnimy funkcję o nazwie `run`, która będzie zawierać całą logikę aktualnie znajdującą się w funkcji
 `main`, która nie jest zaangażowana w ustawianie konfiguracji ani obsługę
 błędów. Kiedy skończymy, `main` będzie zwięzły i łatwy do zweryfikowania poprzez
@@ -338,7 +337,7 @@ Funkcja `run` zawiera teraz całą pozostałą logikę z `main`, zaczynając
 od odczytu pliku. Funkcja `run` przyjmuje instancję `Config` jako
 argument.
 
-#### Returning Errors from the `run` Function
+#### Zwracanie błędów z funkcji `run`
 
 Po oddzieleniu pozostałej logiki programu do funkcji `run` możemy
 ulepszyć obsługę błędów, tak jak zrobiliśmy to z `Config::build` w Listingu 12-9.
@@ -391,7 +390,7 @@ Rust mówi nam, że nasz kod zignorował wartość `Result`, a wartość `Result
 może wskazywać, że wystąpił błąd. Ale nie sprawdzamy, czy wystąpił błąd, a kompilator przypomina nam, że prawdopodobnie mieliśmy tu
 mieć jakiś kod obsługi błędów! Naprawmy ten problem teraz.
 
-#### Handling Errors Returned from `run` in `main`
+#### Obsługa błędów zwracanych przez `run` w `main`
 
 Sprawdzimy błędy i obsłużymy je, stosując technikę podobną do tej, której użyliśmy
 z `Config::build` w Liście 12-10, ale z niewielką różnicą:
@@ -412,7 +411,7 @@ przypadku sukcesu, zależy nam tylko na wykryciu błędu, więc nie potrzebujemy
 Ciała funkcji `if let` i `unwrap_or_else` są takie same w
 obu przypadkach: drukujemy błąd i wychodzimy.
 
-### Splitting Code into a Library Crate
+### Podział kodu na skrzynię biblioteczną
 
 Nasz projekt `minigrep` jak dotąd wygląda dobrze! Teraz podzielimy plik
 *src/main.rs* i umieścimy trochę kodu w pliku *src/lib.rs*. W ten sposób

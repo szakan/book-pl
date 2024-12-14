@@ -32,7 +32,7 @@ Kompilator wie, że ma szukać kodu w tym pliku, ponieważ natrafił w korzeniu 
 <span class="caption">Listing 7-22: Definicje wewnątrz modułu `front_of_house` w *src/front_of_house.rs*</span>
 
 Warto zauważyć, że plik za pomocą deklaracji `mod` wystarczy załadować w *jednym miejscu* drzewa modułów.
-Kiedy kompilator wie, że plik jest częścią projektu (i wie gdzie w drzewie modułów rezyduje kod, ponieważ umieszczono tam deklarację `mod`), inne pliki w projekcie powinny odwoływać się do kodu załadowanego z pliku używając ścieżki do miejsca, w którym został zadeklarowany, tak jak to zostało opisane w sekcji [„Paths for Referring to an Item in the Module Tree“][paths]<!-- ignore -->.
+Kiedy kompilator wie, że plik jest częścią projektu (i wie gdzie w drzewie modułów rezyduje kod, ponieważ umieszczono tam deklarację `mod`), inne pliki w projekcie powinny odwoływać się do kodu załadowanego z pliku używając ścieżki do miejsca, w którym został zadeklarowany, tak jak to zostało opisane w sekcji [„Ścieżki odwoływania się do elementu w drzewie modułów“][paths]<!-- ignore -->.
 Innymi słowy, `mod` *nie* jest znaną z niektórych języków programowania operacją „include“.
 
 Następnie przeniesiemy moduł `hosting` do jego własnego pliku.

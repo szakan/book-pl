@@ -336,7 +336,7 @@ aby uporządkować je według atrybutu `width` od najniższego do najwyższego:
 
 </Listing>
 
-This code prints:
+Ten kod drukuje:
 
 ```console
 {{#include ../listings/ch13-functional-features/listing-13-07/output.txt}}

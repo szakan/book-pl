@@ -139,7 +139,7 @@ Iterując po mutowalnych referencjach do elementów, możemy również zmodyfiko
 <span class="caption">Listing 8-8: Iterowanie po mutowalnych referencjach do elementów wektora</span>
 
 Aby za pomocą operatora `+=` zmienić wartość, do której odnosi się mutowalna referencja `i`, wpierw musimy się do tej wartości dostać za pomocą operatora dereferencji `*`.
-Więcej o operatorze dereferencji powiemy w sekcji ["Following the Pointer to the Value with the Dereference Operator"][deref]<!-- ignore --> rozdziału 15.
+Więcej o operatorze dereferencji powiemy w sekcji ["Podążanie za wskaźnikiem do wartości za pomocą operatora dereferencji"][deref]<!-- ignore --> rozdziału 15.
 
 Dzięki regułom nadzorcy pożyczania, zarówno niemutowalne jak i mutowalne iterowanie po wektorze, jest bezpieczne.
 Gdybyśmy na listingu 8-7 lub 8-8 spróbowali w ciałach pętli `for` wstawiać do wektora elementy lub je usuwać, otrzymalibyśmy błąd kompilatora podobny do tego, który powodował kod na listingu 8-6.
@@ -169,7 +169,7 @@ Gdyby Rust pozwolił wektorowi przechowywać elementy dowolnych typów, istniał
 Użycie enum plus wyrażenia `match` oznacza, że Rust zapewni w czasie kompilacji, że każdy możliwy przypadek zostanie obsłużony, jak omówiono w rozdziale 6.
 
 Gdybyśmy nie znali wyczerpującego zestawu typów, których wartości w czasie wykonywania programu będą dodawane do wektora, to nie moglibyśmy użyć omówionej techniki wykorzystującej enum.
-Instead, you can use a trait object, which we’ll cover in Chapter 17.
+Zamiast tego możesz użyć obiektu cechy, który omówimy w rozdziale 17.
 
 Teraz, gdy omówiliśmy wybrane, częste sposoby używania wektorów, warto przejrzeć [dokumentację API][vec-api]<!-- ignore -->, gdyż zawarty w bibliotece standardowej `Vec<T>` posiada znacznie więcej użytecznych metod.
 Na przykład jego metoda `pop` usuwa i zwraca ostatni element.
